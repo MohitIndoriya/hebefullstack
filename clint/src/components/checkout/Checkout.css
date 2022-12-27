@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #EEEEEE;
+} 
+/* *****payment Container*** */
+
+
+#paymContainer {
+    display: grid;
+    grid-template-columns: 50% 25%;
+    margin-top: 20px;
+    padding: 20px;
+    grid-gap: 2%;
+    justify-content: center;
+}
+
+#paymContainer>div {
+    padding: 10px;
+}
+
+
+#paysubcontiner>div{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#paymContainer img {
+   width: 40px;
+}
+
+#paymContainer>div:nth-child(1)>div {
+    margin-top: 10px;
+    margin-bottom: 27px;
+}
+
+#paymContainer>div:nth-child(1) span {
+    vertical-align: top;
+    margin-right: 5px;
+}
+
+
+#paymContainer .setspan {
+    position: relative;
+    top: 8px;
+}
+
+#paymContainer .setinp {
+    width: 1.7em;
+    height: 1.7em;
+    position: relative;
+    top: 4px;
+}
+
+#paymContainer>div {
+    background-color: white;
+}
+
+#paymContainer #totalinfo>div {
+    line-height: 40px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+#totalinfo>div>p{
+    font-size: 13px;
+    color: gray;
+}
+/* ****url container*** */
+#addUrl {
+    position: relative;
+    margin-left: 13%;
+    margin-top: -4%;
+}
+
+#addUrl>input {
+    height: 20px;
+}
+
+#addUrl>button {
+    background: #008ECC;
+    padding: 6px 12px;
+    margin-left: 10px;
+    color: white;
+    border-radius: 4px;
+    border: none;
+}
+
+/* ****oder messsage part** */
+#orderMsg h1{
+    color: rgb(38, 63, 204);
+    padding: 4px;
+    margin: 20px 450px;
+}
+.material-icons{
+    position: relative;
+    top: 3px;
+    color: green;
+}
+#orderMsg{
+    padding: 20px;
+}
+#orderMsg h2{
+    color: rgb(51, 51, 51);
+    padding: 4px;
+    margin: 20px 110px;
+}
+#hombtn{
+    margin-left: 115px;
+    background-color: #008ECC;
+    padding: 7px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#hombtn:hover{
+    color: rgb(207, 207, 207);
+}
+.oPlaced{
+    font-size: 25px;
+    font-weight: 600;
+    margin-left: 40%;
+    
+    color: blue;
+    border: 2px solid grey;
+} .oPlaced div{
+    background-color: pink;
+}

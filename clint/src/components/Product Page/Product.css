@@ -1,0 +1,101 @@
+*{
+    
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    background-color: #caafa8;
+    color: #ffffff;
+    padding: 5px;
+    margin: 80px auto;
+}
+#top{
+    display: flex;
+    padding: 4px;
+    justify-content: center;
+    gap: 50px;
+}
+#topLeft{
+    height: fit-content;
+    position: sticky;
+    top: 0;
+}
+#topRight{
+    padding: 3px;
+}
+#topRight > h1{
+    margin-top: -3px;
+}
+#topRight > div:nth-child(3) div:nth-child(1){
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+#topRight > div:nth-child(4){
+    margin: 20px 0px 20px 0px;
+}
+#topRight > div:nth-child(5),#topRight > div:nth-child(7){
+    margin: 20px 0 0 0;
+}
+#topRight > div > button{
+    cursor: pointer;
+    padding: 10px 18px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: 10px;
+    border: #ffffff 1px solid;
+}
+#addToCart {
+    border-radius: 4px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 0 transparent;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    transition: background 0.2s ease-in-out;
+  }
+#buyBtn{
+    border-radius: 4px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 0 transparent;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    background-color: #5a31f4;
+    transition: background 0.1s ease-in-out;
+}
+#topRight > div:nth-child(11)  p{
+    margin-top: 30px;
+}
+#bottom {
+    text-align: center;
+    padding: 4px;
+    width: 90%;
+    margin: 100px auto;
+}
+#topBottom{
+    font-size: 45px;
+    font-weight: bolder;
+}
+a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}

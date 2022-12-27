@@ -1,0 +1,83 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footer{
+    background-color: #CAAFA8;
+    height: 700px;
+    color: #fff;
+    margin: auto;
+    letter-spacing: 1px;
+    font-family: "Montseerat";
+    text-align: center;
+    padding-top: 40px;
+    font-weight: 800;
+    
+}
+h2{
+    margin-bottom: 40px;
+}
+
+.para{
+
+line-height: 16px;
+margin-top: 80px;
+display: block;
+margin-block-start: 1em;
+margin-block-end: 1em;
+margin-inline-start: 0px;
+margin-inline-end: 0px;
+width: 600px;
+overflow-wrap: break-word;  
+word-wrap: break-word; 
+word-break: break-word;
+margin: auto;
+}
+input[type=email] {
+   margin-top: 20px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+   
+  }
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    /* margin-left: 600px; */
+    justify-content: center;
+}
+
+.icon{
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    vertical-align: middle;
+    fill: currentColor;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+.links{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.links a{
+    text-decoration: none;
+    color: #fff;
+    font-variant: normal;
+}
+
+.last{
+    margin-top: 25px;
+    text-align: center;
+}
