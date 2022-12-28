@@ -1,5 +1,5 @@
 const {Router} =require('express');
-const { getAllCartData, addToCart } = require('../controllers/cart.controllers');
+const { getAllCartData, addToCart, updateCart, deleteCartProduct } = require('../controllers/cart.controllers');
 const { authentication } = require('../middleware/authentication');
 
 
@@ -14,10 +14,10 @@ cartRouter.get('/cart',authentication,async(req,res)=>{
     
     try{
 
-        let user = req.user;
-        let cartData= await getAllCartData(user);
+        const user = req.user;
+        const cartData= await getAllCartData(user);
         res.send({
-            data:data
+            data:cartData
         })
 
     }catch(err){
@@ -37,10 +37,11 @@ cartRouter.post("/cart",authentication,async(req,res)=>{
 
     try{
 
-        let user = req.user;
-        let cartData= await addToCart(user);
+        const user = req.user;
+        const body = req.body;
+        const cartData= await addToCart(body,user);
         res.send({
-            data:data
+            data:cartData
         })
 
     }catch(err){
@@ -56,4 +57,51 @@ cartRouter.post("/cart",authentication,async(req,res)=>{
 })
 
 
-// cartRouter.update('/cart/:productId')
+
+cartRouter.patch('/cart/:productId',authentication,async(req,res)=>{
+
+    try{
+
+        const productId= req.params.productId;
+        const body = req.body;
+        const user = req.user;
+        
+        const cartData= await updateCart(body,user,productId);
+        res.send({
+            data:cartData
+        })
+
+
+    }catch(err){
+        res.status(500).send({
+            err:err.message
+        })
+    }
+
+
+})
+
+
+cartRouter.delete('/cart/:productId',authentication,async(req,res)=>{
+
+    try{
+
+        const productId= req.params.productId;
+        const user = req.user;
+        const cartData= await deleteCartProduct(user,productId);
+        res.send({
+            data:cartData
+        })
+
+
+    }catch(err){
+        res.status(500).send({
+            err:err.message
+        })
+    }
+
+
+})
+
+
+module.exports ={cartRouter}

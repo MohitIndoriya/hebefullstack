@@ -1,7 +1,6 @@
-const userModel = require("../db/user")
+const userModel = require("../database/user")
 const bcrypt = require('bcrypt');
-const  {generateToken}  = require("../CommonFunction/CommonFunction");
-const axios = require('axios');
+const  {generateToken}  = require("../miscFunction/CommonFunction");
 require('dotenv').config();
 
 const signUp =async(body)=>{

@@ -1,6 +1,6 @@
 const express = require('express');
-const { checkToken } = require('../CommonFunction/CommonFunction');
-const { signUp, login } = require('../controller/user.controller');
+const { checkToken } = require('../miscFunction/CommonFunction');
+const { signUp, login } = require('../controllers/user.controller');
 
 
 const userRouter = express.Router();
