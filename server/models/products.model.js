@@ -1,13 +1,4 @@
 const mongoose = require('mongoose');
-// "id": 1,
-//       "title": "Adelade Skirt // Clay",
-//       "price": 168,
-//       "desciption": "The Adelade skirt is guaranteed to be your go to for everything! Pair it with a tank or tee for a look that’s all about ease. A stunning feminine skirt with a wide waist yoke. A perfect style that will take you from day to night for any occasion.",
-//       "category": "skirts",
-//       "quantity": 1,
-//       "rating": {
-//         "rate": 3.9,
-//         "count": 70
 const productSchema = new mongoose.Schema({
     title:{
         type:String,
