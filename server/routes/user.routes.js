@@ -1,15 +1,16 @@
 const express=require("express");
-const User = require("../model/user.model");
+const User = require("../database/user");
 let jwt=require("jsonwebtoken")
 let argon2=require("argon2")
 const app=express.Router();
 app.post("/signup",async(req,res)=>{
-    let {email,password,name}=req.body;
+    let {email,password,firstName,lastName,contact}=req.body;
 console.log("yes")
+console.log(req.body);
     try {
         password=await argon2.hash(password)
-        let ip=req.socket.remoteAddress;
-       let data=await User.create({email,password,name,ip})
+        
+       let data=await User.create({email,password,firstName,contact,lastName})
        return res.status(201).send(data)
     } catch (errr) {
         res.status(400).send(errr.message)
@@ -25,10 +26,11 @@ try{
     if(user){
       let varifieduser=  await argon2.verify(user.password, password)
     if(varifieduser){
-        let token=jwt.sign({id:user._id,email:user.email,role:user.role},process.env.secret)
+        let token=jwt.sign({id:user._id,email:user.email},process.env.secret)
         
       
-       res.status(200).send(token)
+     // localStorage.setItem("token",token)
+       return  res.status(200).send(token)
     
         
     }else{

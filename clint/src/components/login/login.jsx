@@ -13,9 +13,10 @@ export default function Login() {
     const [password,setPassword]=useState("")
     const [email,setEmail]=useState("")
     const {isAuth}=useSelector((store)=>store.auth)
-    console.log(isAuth)
+  
     const dispatch=useDispatch()
-    const  handleSubmit=async()=>{
+    const  handleSubmit=()=>{
+      console.log("chal")
     dispatch(Signin({email,password}))
     }
     isAuth&&alert("Login Succesfull")

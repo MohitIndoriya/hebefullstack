@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "argon2": "^0.30.2",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -7,5 +8,15 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.1",
     "nodemon": "^2.0.20"
-  }
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
