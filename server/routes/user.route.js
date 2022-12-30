@@ -6,6 +6,11 @@ const { signUp, login } = require('../controllers/user.controller');
 const userRouter = express.Router();
 
 
+userRouter.get('/googleSignin',async(req,res)=>{
+    // console.log(req);
+    res.send('Login')
+})
+
 userRouter.post('/signup',async(req,res)=>{
     let body = req.body;
     try{
