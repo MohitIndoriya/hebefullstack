@@ -7,7 +7,9 @@ const passport = require('passport');
 const googleStrategy =require('passport-google-oauth20').Strategy;
 const oathRouter = require('./routes/oath.route');
 const expressSession = require('express-session');
+const { googleAuth } = require('./controllers/user.controller');
 require('dotenv').config();
+require("./routes/oath.route")
 const data = process.env;
 
 
@@ -18,6 +20,8 @@ const app = express();
 app.use(expressSession({
     secret:data.SECRET_KEY
 }))
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(cors());
 app.use(express.json());
 
@@ -27,10 +31,7 @@ passport.use(new googleStrategy({
     callbackURL:data.GOOGLE_CALLBACK,
     passReqToCallback: "true"
 
-},function (reqest, accessToken, refreshToken, profile, done) {
-    console.log(profile);
-    return done(null, profile);
-  }))
+},googleAuth))
 
 
 
@@ -39,6 +40,11 @@ passport.use(new googleStrategy({
 app.use(oathRouter);
 app.use(userRouter);
 app.use(cartRouter);
+
+app.get('/',async(req,res)=>{
+    
+    res.send();
+})
 
 const PORT = process.argv[2] || 3000;
 connect().then(res=>{
