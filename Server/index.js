@@ -1,23 +1,39 @@
-const express = require('express');
-const { connect } = require('./database/connect');
-const cors = require('cors');
-const userRouter = require('./routes/user.route');
-const { cartRouter } = require('./routes/cart.route');
+require("dotenv").config();
+
+const express = require("express");
 
 const app = express();
-app.use(cors());
-app.use(express.json());
 
-app.use(userRouter);
-app.use(cartRouter);
+require("./passport-setup");
 
-const PORT = process.argv[2] || 3001;
-connect().then(res=>{
-    app.listen(PORT,()=>{
-        console.log(res);
-        console.log("Connected To Server");
-    })
-})
-.catch((err)=>{
-    console.log(err.message);
-})
+const passport = require("passport");
+
+const session = require("express-session");
+
+app.use(session({ secret: "melody hensley is my spirit animal" }));
+
+app.set("view engine", "ejs");
+
+
+app.get("/", (req, res) => [res.render("pages/index")]);
+
+app.get("/success", (req, res) => {
+  res.render("pages/profile.ejs");
+});
+
+app.get(
+  "/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+app.get(
+  "/google/callback",
+  passport.authenticate("google", { failureRedirect: "/failed" }),
+  function (req, res) {
+    res.redirect("/success");
+  }
+);
+
+app.listen(5000, () => {
+  console.log("App is runnig on port 5000");
+});
