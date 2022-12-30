@@ -8,6 +8,8 @@ const data = process.env;
 
 const oathRouter = Router();
 
+
+
 passport.serializeUser(function (user, done) {
     done(null, user);
 })

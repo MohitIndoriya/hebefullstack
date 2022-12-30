@@ -24,19 +24,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors());
 app.use(express.json());
-
 passport.use(new googleStrategy({
     clientID:data.GOOGLE_CLIENT_ID,
     clientSecret:data.GOOGLE_SECRET,
     callbackURL:data.GOOGLE_CALLBACK,
     passReqToCallback: "true"
 
-},googleAuth))
-
-
-
-
-
+},googleAuth));
 app.use(oathRouter);
 app.use(userRouter);
 app.use(cartRouter);
