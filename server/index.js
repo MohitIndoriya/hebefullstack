@@ -7,7 +7,9 @@ const passport = require('passport');
 const googleStrategy =require('passport-google-oauth20').Strategy;
 const oathRouter = require('./routes/oath.route');
 const expressSession = require('express-session');
+const {generateToken} = require('./miscFunction/CommonFunction')
 const { googleAuth } = require('./controllers/user.controller');
+const { request } = require('express');
 require('dotenv').config();
 require("./routes/oath.route")
 const data = process.env;
@@ -17,6 +19,7 @@ const data = process.env;
 
 
 const app = express();
+app.use(express.static("./build"))
 app.use(expressSession({
     secret:data.SECRET_KEY
 }))
@@ -35,10 +38,7 @@ app.use(oathRouter);
 app.use(userRouter);
 app.use(cartRouter);
 
-app.get('/',async(req,res)=>{
-    
-    res.send();
-})
+
 
 const PORT = process.argv[2] || 3000;
 connect().then(res=>{

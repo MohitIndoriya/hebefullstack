@@ -4,6 +4,7 @@ const env = process.env.SECRET_KEY;
 
 
 const generateToken=(obj)=>{
+    
     if(obj.password){
         delete obj.password;
     }
