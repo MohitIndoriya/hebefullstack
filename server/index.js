@@ -8,6 +8,7 @@ const googleStrategy = require("passport-google-oauth20").Strategy;
 const oathRouter = require("./routes/oath.routes");
 const expressSession = require("express-session");
 const { googleAuth } = require("./controllers/user.controller");
+const productRouter = require("./routes/product.router");
 require("dotenv").config();
 require("./routes/oath.routes");
 const data = process.env;
@@ -40,6 +41,7 @@ passport.use(
 );
 app.use(oathRouter);
 app.use(cartRouter);
+app.use("/",productRouter)
 
 const PORT = process.argv[2] || 8080;
 connect()

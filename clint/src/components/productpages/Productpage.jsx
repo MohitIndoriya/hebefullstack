@@ -13,11 +13,9 @@ export default function Productpage() {
     let dispatch=useDispatch()
   
     const data=async()=>{
-       
-       
-       let  products=await axios.get(`http://localhost:8080/products?category=${category}`)
+       let  products=await axios.get(`http://localhost:8080/products`)
        console.log(products.data);
-     setarr(products.data)
+     setarr(products.data.data)
        
     }
 useEffect(()=>{
