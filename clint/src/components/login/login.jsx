@@ -13,9 +13,10 @@ export default function Login() {
     const [password,setPassword]=useState("")
     const [email,setEmail]=useState("")
     const {isAuth}=useSelector((store)=>store.auth)
-    console.log(isAuth)
+  
     const dispatch=useDispatch()
-    const  handleSubmit=async()=>{
+    const  handleSubmit=()=>{
+      console.log("chal")
     dispatch(Signin({email,password}))
     }
     isAuth&&alert("Login Succesfull")
@@ -32,7 +33,11 @@ isAuth&&navigate("/")
     <Input variant='flushed' value={password}  onChange={(e)=>setPassword(e.target.value)} />
     <Button colorScheme='black' textColor="#caafa8" variant='ghost' width="100%" bg="white" marginTop="50px" borderRadius="0px" onClick={handleSubmit}>
     Log in
-  </Button>
+          </Button>
+          <a href='http://localhost:8080/google'><Button  colorScheme='black' textColor="#caafa8" variant='ghost' width="100%" bg="white" marginTop="50px" borderRadius="0px" >
+        Login With Google
+    </Button></a>
+        
   <Link to="/createAccount" ><Heading as='h6' size='md' textAlign="left"  fontWeight="normal" paddingTop="50px" >Create account</Heading></Link>
   </Box>
   </Container>
