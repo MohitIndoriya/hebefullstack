@@ -4,9 +4,18 @@
     padding:0px;
 
 }
-.border{
-    border: 1px solid blue;
+Row{
+    border: none;
+}
+.bg{
+    padding: 20px
 }
 .btn, input{
     width: 100%;
+}
+@media screen and (min-width: 992px){
+    .Container{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 }

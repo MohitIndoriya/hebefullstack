@@ -5,9 +5,9 @@ import {Container, Row, Col} from 'react-bootstrap';
 
 function Checkout(){
     return (
-        <Container>
+        <Container className='Container'>
             <Row>
-                <Col className='border' lg={7} md={6} sm={12}>
+                <Col className='' lg={7} md={6} sm={12}>
                 <h2>Hebe Designer Boutique</h2>
                 <p>Cart &#62; Information &#62; Shipping &#62; Payment</p>
                 <p>Express Checkout</p>
@@ -81,11 +81,45 @@ function Checkout(){
                         Continue to shipping
                         </Button>
                         </Col>
+                        <hr/>
+                        <Row>
+                            <Col lg={4}>Refund Policy</Col>
+                            <Col lg={4}>Privacy Policy</Col>
+                            <Col lg={4}>Terms of Services</Col>
+                        </Row>
                     </Row>
                     </Form>
                 </Col>
-                <Col className='border' lg={5} md={6} sm={12}>
-                xs=6 md=4 sm=12
+                <Col className='bg' lg={5} md={6} sm={12}>
+                    <Row>
+                        <Col lg={10} sm={10}>
+                            <p>Baby Claw Ring // Silver Rose Quartz</p>
+                        </Col>
+                        <Col lg={2} sm={2}>
+                            <p>200$</p>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col lg={8} sm={8}>
+                        <Form.Group className="mb-3" >
+                        <Form.Control type="text" placeholder="Gift Card / Discount" />
+                    </Form.Group>
+                        </Col>
+                        <Col lg={4} sm={4}>
+                        <Button variant="dark" type="submit">
+                        Apply
+                        </Button>
+                        </Col>
+                    </Row>
+                    <hr/>
+                    <Row>
+                        <Col lg={10} sm={10}>
+                            <p>Total</p>
+                        </Col>
+                        <Col lg={2} sm={2}>
+                            <p>200$</p>
+                        </Col>
+                    </Row>
                 </Col>
                 
             </Row>
