@@ -25,19 +25,15 @@ export default function Signup() {
      firstName,
      lastName,
      email,
-     password
+     password,
    }
 
    async function handleSubmit() {
        try{
         
-       let existing=await axios.get(`http://localhost:8080/users?email=${email}`)
-       // let data=await existing.json()
-       console.log(existing.data,"ooomero")
-      if(existing.data.length>0){
-       return alert("user alredy exists")
-      }else{
-        await axios.post("http://localhost:8080/users",user)
+      
+      
+        await axios.post("http://localhost:8080/users/signup",user)
         dispatch({
             type :"REGISTER",
             payload:"user registerd"
@@ -46,8 +42,8 @@ export default function Signup() {
                navigate("/login")
         
       }
-       }catch(e){
-        console.log(e.message)
+       catch(e){
+      console.log(e.response.data)
        }
 
    
