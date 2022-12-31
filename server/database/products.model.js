@@ -12,9 +12,19 @@ const productSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    rating:{
-        type:Number,
+    image:{
+        type:String,
         required:true
+    },
+    rating:{
+        rate:{
+            type:Number,
+            required:true
+        },
+        count:{
+            type:Number,
+            required:true
+        }
     },
     product_id:{
         type:String,

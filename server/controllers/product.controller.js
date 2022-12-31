@@ -1,4 +1,4 @@
-const Product = require("../models/products.model")
+const Product = require("../database/products.model")
 
 const getData = async(req,res) => {
     let {
@@ -6,7 +6,7 @@ const getData = async(req,res) => {
         sortby,
         order,
         category,
-        limit=12
+        limit=9
     } = req.query;
 
     let data = [];

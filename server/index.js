@@ -1,5 +1,5 @@
 const express = require('express');
-const connect = require('./connect/connect');
+const connect = require('./database/connect');
 const productRouter = require('./routes/product.router');
 
 const app = express();
