@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const User = require('../database/user');
 require('dotenv').config();
 const env = process.env.SECRET_KEY;
 
@@ -12,14 +13,18 @@ const generateToken=(obj)=>{
     return token;
 }
 
-const checkToken =(token)=>{
+const checkToken =async(token)=>{
+    // console.log(token);
     let valid = jwt.verify(token,env);
     if(!valid){
         throw new Error('Invalid User');   
     }
-    let obj = jwt.decode(token);
     
-    return obj;
+    
+    let user = await User.findOne({email:valid.email});
+    // console.log(user);
+    
+    return user;
 
 }
 

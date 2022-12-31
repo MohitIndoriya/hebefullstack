@@ -18,12 +18,21 @@ const getAllCartData=async(user)=>{
 
 const addToCart=async(body,user)=>{
 
+    
+    
     // Getting User Id
     const getUser = await userModel.findOne({email:user.email});
+    
+    const products = await cartModel.findOne({productId:body.productId,userId:getUser.id});
+    if(products){
+        throw new Error('Already In Cart');
+    }
+
 
     //Adding To Cart
     body.userId=getUser.id;
     const newProduct = await cartModel.create(body);
+    
 
     return newProduct;
 
@@ -52,12 +61,14 @@ const updateCart=async(body,user,productId)=>{
     }
 
 
+    
     //Updating Product
     let updatedProduct = await cartModel.updateOne({"_id":productId},{
         ...body
     })
 
-    console.log("hello");
+    // console.log("hello");
+
 
 
     return updatedProduct;

@@ -4,14 +4,14 @@ import React from 'react'
 import { useState } from "react"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { addtocart } from "../../actions/cartAction"
 
 export default function Productpage() {
     let [arr,setarr]=useState([])
     let {category}=useParams()
     let dispatch=useDispatch()
-  
+    const navigate =useNavigate();
     const data=async()=>{
        let  products=await axios.get(`http://localhost:8080/products?category=${category}`)
        console.log(products.data);
@@ -50,7 +50,15 @@ console.log(arr);
             <CardFooter justifyContent="center">
               <ButtonGroup spacing='2'>
                
-                <Button variant='ghost' colorScheme='blue' onClick={()=>dispatch(addtocart(e))}>
+                <Button variant='ghost' colorScheme='blue' onClick={()=>{
+                    if(!localStorage.getItem("token")){
+                      navigate('/login');
+                    }
+                    else{
+
+                      dispatch(addtocart(e))
+                    }
+                }}>
                   Add to cart
                 </Button>
               </ButtonGroup>

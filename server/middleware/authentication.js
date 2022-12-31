@@ -5,7 +5,7 @@ const authentication =async(req,res,next)=>{
 
     try{
         let token = req.headers.token;
-        let user = checkToken(token);
+        let user = await checkToken(token);
         req.user=user;
         next();
     }catch(err){
