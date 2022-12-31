@@ -25,7 +25,7 @@ export default function Product() {
        
     let  products=await axios.get(`http://localhost:8080/products/${id}`)
     
-  setproduct([products.data])
+  setproduct([...products.data.data])
     
  }
  useEffect(()=>{

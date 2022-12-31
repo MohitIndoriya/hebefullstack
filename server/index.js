@@ -27,7 +27,7 @@ passport.use(new googleStrategy({
     clientSecret:data.GOOGLE_SECRET,
     callbackURL:data.GOOGLE_CALLBACK,
     passReqToCallback: "true"
-
+},googleAuth));
 app.use("/users", userRouter);
 app.use(cartRouter);
 

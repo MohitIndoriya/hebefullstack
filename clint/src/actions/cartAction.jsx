@@ -16,7 +16,16 @@ export  const getcart=()=>async (dispatch)=>{
 }
 export const HandleQuantiy=({id,quantity})=>async (dispatch)=>{
     try{
-        let data=await axios.patch(`http://localhost:8080/cart/${id}`,{quantity})
+        let token = localStorage.getItem('token');
+        let data=await axios.patch(`http://localhost:8080/cart/${id}`,{
+            body:JSON.stringify({
+                quantity:quantity
+            }),
+            headers:{
+                "Content-Type":"application/json",
+                token:token
+            }
+        })
         let arr=await axios.get("http://localhost:8080/cart")
         return  dispatch({
             type:"GETCART",

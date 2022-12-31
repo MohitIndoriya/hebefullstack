@@ -9,24 +9,6 @@ let userschema = mongoose.Schema({
     type: String,
   },
 
-<<<<<<< HEAD
-
-
-
-const userSchema= new mongoose.Schema({
-    name:String,
-    email:String,
-    password:String,
-    authType:String,
-    img:String
-    
-})
-
-const userModel = mongoose.model("user",userSchema);
-
-module.exports = userModel;
-
-=======
   email: {
     type: String,
     required: true,
@@ -47,4 +29,3 @@ module.exports = userModel;
 });
 let User = mongoose.model("user", userschema);
 module.exports = User;
->>>>>>> 99e968932101a44aea4b1e5141590e9af1ef494b

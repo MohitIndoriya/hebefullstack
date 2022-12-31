@@ -13,7 +13,7 @@ export default function Productpage() {
     let dispatch=useDispatch()
   
     const data=async()=>{
-       let  products=await axios.get(`http://localhost:8080/products`)
+       let  products=await axios.get(`http://localhost:8080/products?category=${category}`)
        console.log(products.data);
      setarr(products.data.data)
        
@@ -31,7 +31,7 @@ console.log(arr);
         arr.map((e)=>{
             return <Card maxW='sm'>
             <CardBody>
-             <Link to ={`/product/${e.id}`}> <Image
+             <Link to ={`/product/${e["_id"]}`}> <Image
                 src={e.image}
                 alt='Green double couch with wooden legs'
                 borderRadius='lg'
@@ -50,7 +50,7 @@ console.log(arr);
             <CardFooter justifyContent="center">
               <ButtonGroup spacing='2'>
                
-                <Button variant='ghost' colorScheme='blue' onClick={()=>dispatch(addtocart(e.id))}>
+                <Button variant='ghost' colorScheme='blue' onClick={()=>dispatch(addtocart(e))}>
                   Add to cart
                 </Button>
               </ButtonGroup>
