@@ -11,11 +11,28 @@ const signUp =async(body)=>{
     }
     const salt= 10;
     body.password = bcrypt.hashSync(body.password,salt);
+    body.authType="normal"
     let newUser = await userModel.create(body);
-    newUser.authType="normal"
     return "Sucessfully Sign Up";
 
 }
+
+const googleAuth=async(reqest, accessToken, refreshToken, profile, done)=>{
+    let user =await userModel.findOne({email:profile.emails[0].value});
+    
+    if(!user){
+        let body={
+            authType:"google",
+            name:profile.emails[0].value.split('@')[0],
+            img:profile.photos[0].value,
+            email:profile.emails[0].value
+        }
+        let newUser = await userModel.create(body);
+    }
+
+    return done(null, profile);
+}
+
 
 const login=async(body)=>{
 
@@ -32,4 +49,4 @@ const login=async(body)=>{
     }
     return generateToken(user.toJSON());
 }
-module.exports = {signUp,login}
+module.exports = {signUp,login,googleAuth}

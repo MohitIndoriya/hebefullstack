@@ -1,39 +1,51 @@
-require("dotenv").config();
+const express = require('express');
+const { connect } = require('./database/connect');
+const cors = require('cors');
+const userRouter = require('./routes/user.route');
+const { cartRouter } = require('./routes/cart.route');
+const passport = require('passport');
+const googleStrategy =require('passport-google-oauth20').Strategy;
+const oathRouter = require('./routes/oath.route');
+const expressSession = require('express-session');
+const {generateToken} = require('./miscFunction/CommonFunction')
+const { googleAuth } = require('./controllers/user.controller');
+const { request } = require('express');
+require('dotenv').config();
+require("./routes/oath.route")
+const data = process.env;
 
-const express = require("express");
+
+
+
 
 const app = express();
+app.use(express.static("./build"))
+app.use(expressSession({
+    secret:data.SECRET_KEY
+}))
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(cors());
+app.use(express.json());
+passport.use(new googleStrategy({
+    clientID:data.GOOGLE_CLIENT_ID,
+    clientSecret:data.GOOGLE_SECRET,
+    callbackURL:data.GOOGLE_CALLBACK,
+    passReqToCallback: "true"
 
-require("./passport-setup");
-
-const passport = require("passport");
-
-const session = require("express-session");
-
-app.use(session({ secret: "melody hensley is my spirit animal" }));
-
-app.set("view engine", "ejs");
+},googleAuth));
+app.use(oathRouter);
+app.use(userRouter);
+app.use(cartRouter);
 
 
-app.get("/", (req, res) => [res.render("pages/index")]);
-
-app.get("/success", (req, res) => {
-  res.render("pages/profile.ejs");
-});
-
-app.get(
-  "/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
-);
-
-app.get(
-  "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/failed" }),
-  function (req, res) {
-    res.redirect("/success");
-  }
-);
-
-app.listen(5000, () => {
-  console.log("App is runnig on port 5000");
-});
+const PORT = process.argv[2] || 3000;
+connect().then(res=>{
+    app.listen(PORT,()=>{
+        console.log(res);
+        console.log("Connected To Server");
+    })
+})
+.catch((err)=>{
+    console.log(err.message);
+})
