@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link } from "react-router-dom"
+import {Link, Navigate, useNavigate } from "react-router-dom"
 import "./Navbar.css";
 import TypewriterComponent from "typewriter-effect";
 import PersonIcon from '@mui/icons-material/Person';
@@ -26,10 +26,16 @@ const Navbar1 = () => {
   function DrawerExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
-  
+    const navigate = useNavigate();
     return (
       <>
-        <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
+        <Button ref={btnRef} colorScheme='teal' onClick={()=>{
+          
+          
+            onOpen();
+
+          
+        }}>
           Open
         </Button>
         <Drawer

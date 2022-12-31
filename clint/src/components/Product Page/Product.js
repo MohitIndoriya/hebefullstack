@@ -12,20 +12,22 @@ import {
 } from "@chakra-ui/react";
 import SliderProducts from "../SliderProducts/SliderProducts";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addtocart } from "../../actions/cartAction";
+
 
 export default function Product() {
   let dispatch=useDispatch()
   let {id}=useParams()
+  const navigate = useNavigate()
   let [productArray,setproduct]=useState([{}])
   const data1=async()=>{
        
        
     let  products=await axios.get(`http://localhost:8080/products/${id}`)
     
-  setproduct([products.data])
+  setproduct([...products.data.data])
     
  }
  useEffect(()=>{
@@ -87,7 +89,15 @@ export default function Product() {
               </TabList>
             </Tabs>
           </div>
-          <button ref={btnRef} onClick={()=>dispatch(addtocart(id))} id="addToCart">
+          <button ref={btnRef} onClick={()=>{
+            if(!localStorage.getItem("token")){
+              navigate('/login');
+            }
+            else{
+
+              dispatch(addtocart(productArray[0]))
+            }
+          }} id="addToCart">
             Add to cart
           </button>
          

@@ -13,9 +13,10 @@ const cartRouter = Router();
 cartRouter.get('/cart',authentication,async(req,res)=>{
     
     try{
-
+        // console.log("hello");
         const user = req.user;
         const cartData= await getAllCartData(user);
+        
         res.send({
             data:cartData
         })
@@ -36,16 +37,17 @@ cartRouter.get('/cart',authentication,async(req,res)=>{
 cartRouter.post("/cart",authentication,async(req,res)=>{
 
     try{
-
         const user = req.user;
         const body = req.body;
+        // console.log(body,"CartHere");
         const cartData= await addToCart(body,user);
+        // console.log(cartData);
         res.send({
             data:cartData
         })
 
     }catch(err){
-
+        
         res.status(500).send({
             err:err.message
         })

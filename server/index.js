@@ -14,9 +14,20 @@ require("./routes/oath.routes");
 const data = process.env;
 
 const app = express();
+app.use(express.static("./build"))
+app.use(expressSession({
+    secret:data.SECRET_KEY
+}))
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(cors());
 app.use(express.json());
-
+passport.use(new googleStrategy({
+    clientID:data.GOOGLE_CLIENT_ID,
+    clientSecret:data.GOOGLE_SECRET,
+    callbackURL:data.GOOGLE_CALLBACK,
+    passReqToCallback: "true"
+},googleAuth));
 app.use("/users", userRouter);
 app.use(cartRouter);
 

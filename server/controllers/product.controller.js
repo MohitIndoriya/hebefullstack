@@ -53,4 +53,23 @@ const getData = async(req,res) => {
     })
 }
 
-module.exports = getData
+const getDataByID=async(req,res)=>{
+    console.log("hello");
+    try{
+        const data =await Product.findById(req.params.id);
+        console.log(data);
+        res.send({
+            data:[data]
+        })
+    }
+    catch(err){
+        res.send({
+            err:err
+        })
+    }
+
+
+}
+
+
+module.exports = {getData,getDataByID}

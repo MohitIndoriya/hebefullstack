@@ -1,5 +1,5 @@
 const Products = require("./database/products.model")
-const connect = require("./database/connect")
+const {connect} = require("./database/connect")
 
 const data = [
     {

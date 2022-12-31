@@ -20,7 +20,7 @@ let userschema = mongoose.Schema({
   contact: {
     type: String,
   },
-  img: {
+  image: {
     type: String,
   },
   authType: {
