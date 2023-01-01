@@ -26,7 +26,7 @@ import { useSelect } from '@mui/base';
 
 const Navbar1 = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state)=>state.user);
+  const {user,cart} = useSelector((state)=>state);
   const [openModal,setModal] = useState(false);
   const navigate = useNavigate();
   useEffect(()=>{
@@ -34,7 +34,7 @@ const Navbar1 = () => {
     if(token){
       loginUser(token,dispatch);
     }
-  },[localStorage.getItem("token"),openModal])
+  },[localStorage.getItem("token"),openModal,cart])
 
   function DrawerExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
