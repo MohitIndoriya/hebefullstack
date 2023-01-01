@@ -1,4 +1,5 @@
 import axios from "axios"
+import { toast } from "react-toastify";
 
 export  const getcart=()=>async (dispatch)=>{
    try{
@@ -130,11 +131,30 @@ export const addtocart=(e)=>async(dispatch)=>{
         let data = await res.json();
         if(res.status==200){
 
-            alert("Added To Cart");
+            toast.success('Added To Cart', {
+                position: "top-right",
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+              });
+            
         }
         else{
 
-            alert("Already In Cart");
+            toast.warn('Already In Cart', {
+                position: "top-right",
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+              });
         }
         
     } catch (error) {

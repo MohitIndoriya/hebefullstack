@@ -5,11 +5,18 @@ import "./Payment.css"
 import completed from "../ThankYou/Checkmark.gif"
 import load from "../ThankYou/load.gif"
 import { Box, Image } from '@chakra-ui/react';
+import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
 const Payment = () => {
     
     const navigate = useNavigate();
     const [boolean,setBoolean] = useState(false);
     const [loading,setLoading] = useState(false);
+    const {cart} = useSelector(store=>store);
+    // console.log(cart);
+    if(cart.cart.length==0){
+        navigate('/');
+    }
     return (
         <>
             <div class="wrapper">
@@ -52,7 +59,17 @@ const Payment = () => {
                             setTimeout(()=>{
                                 setLoading(false);
                                 setBoolean(false);
-                                navigate('/order')
+                                navigate('/')
+                                toast.success('Order Confirmed', {
+                                    position: "top-right",
+                                    autoClose: 1500,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    progress: undefined,
+                                    theme: "dark",
+                                  });
                             },3000)
                         }} class="btn">
                             Pay
