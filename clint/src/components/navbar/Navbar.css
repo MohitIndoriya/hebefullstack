@@ -145,7 +145,7 @@ justify-content: space-between;
 .dropDown{
   right: 4%!important;
   top: 10%!important;
-  
+  z-index: 100;
 }
 
 .profileDown:hover{
