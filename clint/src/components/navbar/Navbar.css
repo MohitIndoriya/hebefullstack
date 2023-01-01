@@ -8,7 +8,7 @@ width: 100%;
 background-color: #CAAFA8;
 height: 90px;
 display: flex;
-justify-content: space-evenly;
+justify-content: space-between;
 }
 
 .menu{
@@ -25,7 +25,7 @@ justify-content: space-evenly;
 } */
 .navLinks{
   color: #fff;
-  margin: auto;
+  /* margin: auto; */
   /* width: 100px; */
   display: flex;
   align-items: center;
@@ -34,6 +34,7 @@ justify-content: space-evenly;
   cursor: pointer;
   gap: 15px;
   padding: 10px;
+  width: fit-content;
 }
 
 /* 
@@ -60,6 +61,8 @@ justify-content: space-evenly;
  gap: 20px;
  align-items: center !important;
  font-size: medium !important;
+ width: 80%;
+ justify-content: center;
 }
 .dropdown a{
   color: #fff;
@@ -147,11 +150,18 @@ justify-content: space-evenly;
   clear: both;
 }
 
+
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   .dropdown{
     display: none;
   }
+  
+.profileImage{
+  width: 35px;
+  height: 35px;
+}
 }
 @media screen and (max-width: 600px) {
   .column {

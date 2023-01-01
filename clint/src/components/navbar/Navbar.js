@@ -82,15 +82,15 @@ const Navbar1 = () => {
 
   return (
     <div className="parent">
-      <div style={{ display: "flex", justifyContent: "space-between", fontSize: "50px", marginLeft: "30px", color: "#fff", width: "100%", cursor: "pointer" }}>
+      <div style={{ display: "flex", padding:"10px",justifyContent: "space-between", fontSize: "50px", color: "#fff", width: "100%", cursor: "pointer" }}>
 
-        <Link to="/" style={{ width: "350px" }}> <TypewriterComponent
+        <Link to="/" style={{ width: "130px" }}> <TypewriterComponent
 
           options={{
             strings: ["hebe."],
             loop: true,
             autoStart: true,
-            typeSpeed: 10,
+            typeSpeed: 1000,
             fontSize: '200px'
           }}
 
@@ -128,16 +128,13 @@ const Navbar1 = () => {
             </div>
           </div>
 
-          <div className='navbar'>
-
-
-          </div>
-        </div>
+          
+        
      
       <div className='navLinks'>
         {
           user.image?<div>
-            <Image onClick={()=>{setModal(!openModal)}} height="40px" width="55px" borderRadius="50%" src={user.image}/>
+            <Image onClick={()=>{setModal(!openModal)}} height="50px" className='profileImage' width="50px" borderRadius="50%" src={user.image}/>
             {openModal?<Box backgroundColor={"#caafa8"}  position={"fixed"} top={"9%"} right={"60px"} borderRadius={"3px"} boxShadow={"0 0 3px white"} >
               <p className='profileDown' style={{padding:"12px"}}>{user.firstName}</p>
               <p className='profileDown' style={{padding:"12px"}} onClick={()=>{
@@ -146,11 +143,12 @@ const Navbar1 = () => {
                 logoutUser(dispatch);
               }}>LogOut</p>
             </Box>:""}
-          </div>:<Link to="/Login"> <Icon as={PersonIcon} /></Link>
+          </div>:<Link to="/Login"> <Icon   as={PersonIcon} /></Link>
         }
         <Icon as={SearchSharpIcon} />
         <Cart />
       </div>
+    </div>
     </div>
   )
 }

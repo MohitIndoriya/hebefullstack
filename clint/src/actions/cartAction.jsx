@@ -19,7 +19,12 @@ export  const getcart=()=>async (dispatch)=>{
       
     })
    }catch(e){
-    
+    return  dispatch({
+        type:"GETCART",
+        payload:[]
+          
+          
+        })
     console.log("Hello")
    }
 }
