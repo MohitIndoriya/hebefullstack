@@ -14,7 +14,6 @@ const generateToken=(obj)=>{
 }
 
 const checkToken =async(token)=>{
-    // console.log(token);
     let valid = jwt.verify(token,env);
     if(!valid){
         throw new Error('Invalid User');   
@@ -23,6 +22,9 @@ const checkToken =async(token)=>{
     
     let user = await User.findOne({email:valid.email});
     // console.log(user);
+    if(user.password){
+        delete user.password;
+    }
     
     return user;
 

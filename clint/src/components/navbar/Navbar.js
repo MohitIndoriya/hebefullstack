@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate } from "react-router-dom"
 import "./Navbar.css";
 import TypewriterComponent from "typewriter-effect";
 import PersonIcon from '@mui/icons-material/Person';
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
 import ShoppingBagSharpIcon from '@mui/icons-material/ShoppingBagSharp';
-import { Icon } from '@chakra-ui/react';
+import { Box, Icon, Image } from '@chakra-ui/react';
 import {
   Drawer,
   DrawerBody,
@@ -18,10 +18,23 @@ import {
 } from '@chakra-ui/react'
 import { Cart } from '../cart/cart';
 import axios from 'axios';
+import { loginUser, logoutUser } from '../../actions/loginAction';
+import { useDispatch, useSelector } from 'react-redux';
+import { useSelect } from '@mui/base';
 
 
 
 const Navbar1 = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state)=>state.user);
+  const [openModal,setModal] = useState(false);
+  const navigate = useNavigate();
+  useEffect(()=>{
+    let token = localStorage.getItem('token');
+    if(token){
+      loginUser(token,dispatch);
+    }
+  },[localStorage.getItem("token"),openModal])
 
   function DrawerExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -122,7 +135,19 @@ const Navbar1 = () => {
         </div>
      
       <div className='navLinks'>
-        <Link to="/Login"> <Icon as={PersonIcon} /></Link>
+        {
+          user.image?<div>
+            <Image onClick={()=>{setModal(!openModal)}} height="40px" width="55px" borderRadius="50%" src={user.image}/>
+            {openModal?<Box backgroundColor={"#caafa8"}  position={"fixed"} top={"9%"} right={"60px"} borderRadius={"3px"} boxShadow={"0 0 3px white"} >
+              <p className='profileDown' style={{padding:"12px"}}>{user.firstName}</p>
+              <p className='profileDown' style={{padding:"12px"}} onClick={()=>{
+                localStorage.removeItem("token");
+                navigate('/login');
+                logoutUser(dispatch);
+              }}>LogOut</p>
+            </Box>:""}
+          </div>:<Link to="/Login"> <Icon as={PersonIcon} /></Link>
+        }
         <Icon as={SearchSharpIcon} />
         <Cart />
       </div>

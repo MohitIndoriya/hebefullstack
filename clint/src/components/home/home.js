@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import { loginUser } from "../../actions/loginAction";
+import { useDispatch } from "react-redux";
 
 // import "./styles.css";
 
@@ -15,6 +17,7 @@ function Home(props) {
   }
 
   const [state, setState] = useState(1);
+  const dispatch = useDispatch()
   const toggleState = (index) => {
     setState(index);
   };
@@ -23,6 +26,7 @@ function Home(props) {
   if (search.includes("token")) {
     const copy = new URLSearchParams(search);
     localStorage.setItem("token", copy.get("token"));
+    loginUser(copy.get("token"),dispatch)
   }
 
   return (
