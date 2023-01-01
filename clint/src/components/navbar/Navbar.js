@@ -7,6 +7,7 @@ import SearchSharpIcon from '@mui/icons-material/SearchSharp';
 import ShoppingBagSharpIcon from '@mui/icons-material/ShoppingBagSharp';
 import { Box, Icon, Image } from '@chakra-ui/react';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Drawer,
   DrawerBody,
@@ -135,8 +136,8 @@ const Navbar1 = () => {
 
           <div className='navLinks'>
             {
-              user.image ? <div>
-                <Image onClick={() => { setModal(!openModal) }} height="50px" className='profileImage' width="50px" borderRadius="50%" src={user.image} />
+              user.firstName!="" ? <div>
+                <Image onClick={() => { setModal(!openModal) }} height="50px" className='profileImage' width="50px" borderRadius="50%" src={user.image?user.image:"https://thumbs.dreamstime.com/b/anonymous-profile-icon-cartoon-style-vector-web-design-isolated-white-background-220529850.jpg"} />
                 {openModal ? <Box backgroundColor={"#caafa8"} className="dropDown" position={"fixed"} top={"9%"} right={"60px"} borderRadius={"3px"} boxShadow={"0 0 3px white"} >
                   <p className='profileDown' style={{ padding: "12px" }}>{user.firstName}</p>
                   <p className='profileDown' style={{ padding: "12px" }} onClick={() => {
@@ -145,7 +146,7 @@ const Navbar1 = () => {
                     logoutUser(dispatch);
                   }}>LogOut</p>
                 </Box> : ""}
-              </div> : <Link to="/Login"> <Icon as={PersonIcon} /></Link>
+              </div> : <Link  to="/Login"> <Icon as={PersonIcon} /></Link>
             }
             <Icon as={SearchSharpIcon} />
             <Cart />

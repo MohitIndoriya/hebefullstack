@@ -1,6 +1,6 @@
 const initialState = {
     image:"",
-    firstName:"Guest"
+    firstName:""
 }
 
 export const loginReducer=(state=initialState,action)=>{
