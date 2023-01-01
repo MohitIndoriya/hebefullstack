@@ -145,7 +145,7 @@ function Home(props) {
         </video>
       </div>
       <div className="brand-section">
-        <div class="grid-container">
+        <div className="grid-container">
           <div>
             <img src="https://cdn.shopify.com/s/files/1/1132/3440/files/marle_55ab16d7-33ef-49b6-b69b-310b7265357f_180x.png?v=1628037743" />
           </div>
