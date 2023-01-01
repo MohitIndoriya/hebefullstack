@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, Navigate, useNavigate } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import "./Navbar.css";
 import TypewriterComponent from "typewriter-effect";
 import PersonIcon from '@mui/icons-material/Person';
@@ -14,7 +14,7 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Button,Input,useDisclosure
+  Button, Input, useDisclosure
 } from '@chakra-ui/react'
 import { Cart } from '../cart/cart';
 import axios from 'axios';
@@ -22,19 +22,19 @@ import axios from 'axios';
 
 
 const Navbar1 = () => {
- 
+
   function DrawerExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
     const navigate = useNavigate();
     return (
       <>
-        <Button ref={btnRef} colorScheme='teal' onClick={()=>{
-          
-          
-            onOpen();
+        <Button ref={btnRef} colorScheme='teal' onClick={() => {
 
-          
+
+          onOpen();
+
+
         }}>
           Open
         </Button>
@@ -48,11 +48,11 @@ const Navbar1 = () => {
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader>Create your account</DrawerHeader>
-  
+
             <DrawerBody>
               <Input placeholder='Type here...' />
             </DrawerBody>
-  
+
             <DrawerFooter>
               <Button variant='outline' mr={3} onClick={onClose}>
                 Cancel
@@ -65,65 +65,66 @@ const Navbar1 = () => {
     )
   }
 
-  
+
 
   return (
     <div className="parent">
-<div style={{ fontSize:"50px",marginLeft:"30px",color:"#fff",width:"10%",cursor:"pointer"}}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: "50px", marginLeft: "30px", color: "#fff", width: "100%", cursor: "pointer" }}>
 
-                           <Link to="/"> <TypewriterComponent
+        <Link to="/" style={{ width: "350px" }}> <TypewriterComponent
 
-                                options={{
-                                  strings: ["hebe."],
-                                  loop: true,
-                                  autoStart: true,
-                                  typeSpeed:10,
-                                  fontSize: '200px'
-                                }}
+          options={{
+            strings: ["hebe."],
+            loop: true,
+            autoStart: true,
+            typeSpeed: 10,
+            fontSize: '200px'
+          }}
 
-                                />  
-                                </Link>                    
-
-      </div>
-      <div className='navbar'>
-        
-     
+        />
+        </Link>
         <div className="dropdown">
-    
-        <div><a href="#">SHOP</a></div>
-        <div><a href="#">BRANDS</a></div>
-        <div><a href="#">MY BOYFRIENDS BACK</a></div>
-        <div><a href="#">STAFF EDIT</a></div>
-      <div className="dropdown-content">
-           
-        <div className="row">
-          <div className="column">
-            <h3>BY STYLE</h3>
-           
-           <Link to="/products/sweatshirts">Sweat Shirts</Link>
-           <Link to="/products/jackets">Jackets</Link>
-            <a href="#">Belts</a>
+
+          <div><a href="#">SHOP</a></div>
+          <div><a href="#">BRANDS</a></div>
+          <div><a href="#">MY BOYFRIENDS BACK</a></div>
+          <div><a href="#">STAFF EDIT</a></div>
+            <div className="dropdown-content">
+
+              <div className="row">
+                <div className="column">
+                  <h3>BY STYLE</h3>
+
+                  <Link to="/products/sweatshirts">Sweat Shirts</Link>
+                  <Link to="/products/jackets">Jackets</Link>
+                  <a href="#">Belts</a>
+                </div>
+                <div className="column">
+                  <h3>-</h3>
+                  <Link to="/products/jewelery">jewelery</Link>
+                  <Link to="/products/sunglasses">Sun glasses</Link>
+                  <Link to="/products/skirts">Skirts</Link>
+                </div>
+                <div className="column">
+                  <h3>OUR STORE</h3>
+                  <a href="#">Hebe Homegrown</a>
+                  <a href="#">Meet The Girls</a>
+                  <a href="#">Careers</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="column">
-            <h3>-</h3>
-            <Link to="/products/jewelery">jewelery</Link>
-            <Link to="/products/sunglasses">Sun glasses</Link>
-            <Link to="/products/skirts">Skirts</Link>
-          </div>
-          <div className="column">
-            <h3>OUR STORE</h3>
-            <a href="#">Hebe Homegrown</a>
-            <a href="#">Meet The Girls</a>
-            <a href="#">Careers</a>
+
+          <div className='navbar'>
+
+
           </div>
         </div>
-      </div>
-    </div> 
-      </div>
-      <div className='links'>
-       <Link to="/Login"> <Icon as={PersonIcon} /></Link>
+     
+      <div className='navLinks'>
+        <Link to="/Login"> <Icon as={PersonIcon} /></Link>
         <Icon as={SearchSharpIcon} />
-       <Cart />
+        <Cart />
       </div>
     </div>
   )

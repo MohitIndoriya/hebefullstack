@@ -26,7 +26,7 @@ console.log(arr);
    
    
   return (
-    <Box display="grid" gridTemplateColumns="repeat(3,1fr)">{
+    <Box display="grid" gridTemplateColumns="repeat(3,1fr)" m="auto" width="95%">{
 
         arr.map((e)=>{
             return <Card maxW='sm'>

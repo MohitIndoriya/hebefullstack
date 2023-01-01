@@ -1,0 +1,18 @@
+.cartInner::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+.cartInner::-webkit-scrollbar-track {
+    background: transparent;
+    /* color of the tracking area */
+}
+
+.cartInner::-webkit-scrollbar-thumb {
+    background-color: #caafa8;
+    /* color of the scroll thumb */
+    border-radius: 1px;
+    /* roundness of the scroll thumb */
+    border: 3px solid #caafa8;
+    /* creates padding around scroll thumb */
+}
