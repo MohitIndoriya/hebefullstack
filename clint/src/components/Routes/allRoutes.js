@@ -9,7 +9,8 @@ import { Cart } from "../cart/cart"
 import Home from "../home/home"
 import Productpage from "../productpages/Productpage"
 import Product from "../Product Page/Product"
-import Checkout from "../checkout/checkout"
+// import Checkout from "../checkout/checkout"
+import Address from "../Address/Address"
 
 
 
@@ -21,12 +22,13 @@ export default function AllRoutes() {
         
      
      
-      <Route path="/checkout" element={<Checkout/>}/>
+      {/* <Route path="/checkout" element={<Checkout/>}/> */}
 
         <Route path="/Login" element={<Login/>}/>
         <Route path="/products/:category" element={<Productpage/>}/>
         <Route path="product/:id" element={<Product/>}/>
-       
+        <Route path="/address" element={<Address/>}/>
+        
         <Route path="/" element={<Home/>}/>
 
     </Routes>
