@@ -1,17 +1,23 @@
 import React from 'react';
 import "./Footer.css";
-import {Container, Input} from "@chakra-ui/react";
+import {Container, Image, Input} from "@chakra-ui/react";
 
 
 export default function Footer() {
   return (
    
       <div className='footer'>
-          <h2>Join us</h2>
-          <p className='para'>We will let you know when we have new arrivals, events and promo's
+        <div>
+
+          <h2 className='footerHead'>Join us</h2>
+          <p className='footerPara'>We will let you know when we have new arrivals, events and promo's
               don't worry we send them infrequently, just a friendly hi now and again!</p>
-          <Input sx={{marginTop:'20px'}} placeholder='Enter your email'
+              <div className='emailBox'>
+
+          <Input sx={{marginTop:'20px',padding:"15px",width:"100%",border:"none"}} placeholder='Enter your email'
       />
+         <img src='https://img.icons8.com/metro/512/filled-message.png' className='emailIcon'  width="10%" />
+      </div>
      <ul class="no-bullets inline-list footer__social"><li>
       <a target="_blank" rel="noopener" href="https://www.facebook.com/hebedesignerboutique/" title="Hebe Designer Boutique on Facebook" class="js-no-transition">
         <svg aria-hidden="true" focusable="false" role="presentation" class="icon " viewBox="0 0 32 32"><path fill="#444" d="M18.56 31.36V17.28h4.48l.64-5.12h-5.12v-3.2c0-1.28.64-2.56 2.56-2.56h2.56V1.28H19.2c-3.84 0-7.04 2.56-7.04 7.04v3.84H7.68v5.12h4.48v14.08h6.4z"></path></svg>
@@ -23,15 +29,19 @@ export default function Footer() {
        
       </a>
         </li></ul>
-      <div className='links'>
-        <a href='#'>Contact</a>
-        <a href='#'>FAQ</a>
-        <a href='#'>Shipping</a>
-        <a href='#'>Returns</a>
-        <a href='#'>Terms of Use</a>
-        <a href='#'>Privacy Policy</a>
       </div>
-      <p className='last'>© 2022 Hebe Designer Boutique</p>
+      <div>
+
+        <div className='links'>
+          <a href='#'>Contact</a>
+          <a href='#'>FAQ</a>
+          <a href='#'>Shipping</a>
+          <a href='#'>Returns</a>
+          <a href='#'>Terms of Use</a>
+          <a href='#'>Privacy Policy</a>
+        </div>
+        <p className='last'>© 2022 Hebe Designer Boutique</p>
+        </div>
      </div>
     
   )
