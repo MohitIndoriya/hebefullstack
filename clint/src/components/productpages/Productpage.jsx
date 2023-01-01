@@ -5,6 +5,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate, useParams } from "react-router-dom"
+import { toast } from "react-toastify"
 import { addtocart } from "../../actions/cartAction"
 import "./ProductPage.css"
 
@@ -15,7 +16,7 @@ export default function Productpage() {
     const navigate =useNavigate();
     const data=async()=>{
        let  products=await axios.get(`http://localhost:8080/products?category=${category}`)
-       console.log(products.data);
+      //  console.log(products.data);
      setarr(products.data.data)
        
     }
@@ -23,14 +24,14 @@ useEffect(()=>{
     data()
     
 },[category])
-console.log(arr);
+// console.log(arr);
    
    
   return (
     <Box display="grid" className="productsDisplay" gridTemplateColumns="repeat(3,1fr)" padding="30px" rowGap="15px" m="auto !important" width="100%">{
 
         arr.map((e)=>{
-            return <Card height="100%"  margin={"auto"}  boxShadow={"0 0 3px grey"} maxW='sm'>
+            return <Card height="100%" key={e["_id"]}  margin={"auto"}  boxShadow={"0 0 3px grey"} maxW='sm'>
             <CardBody>
              <Link to ={`/product/${e["_id"]}`}> <Image
                 src={e.image}
@@ -54,6 +55,16 @@ console.log(arr);
                 <Button variant='ghost' colorScheme='blue' onClick={()=>{
                     if(!localStorage.getItem("token")){
                       navigate('/login');
+                      toast.warn('Login First', {
+                        position: "top-right",
+                        autoClose: 1500,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                      });
                     }
                     else{
 

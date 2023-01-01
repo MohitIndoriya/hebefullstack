@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { getcart } from '../../actions/cartAction';
 import "./Address.css"
@@ -28,6 +28,14 @@ const Address = () => {
         setForm({...form,[name]:value});
     }
     const navigate = useNavigate();
+    const {cart} = useSelector((store)=>store);
+    useEffect(()=>{
+      
+    if(cart.cart.length==0){
+      navigate('/');
+    }
+    },[])
+
     const clickHandler=async()=>{
         let token=localStorage.getItem("token");
         let res=await fetch('http://localhost:8080/cart',{
@@ -78,52 +86,52 @@ const Address = () => {
 
   return (
     <>
-        <div class="container">
+        <div className="container">
   <h1 className='h1'>Shipping</h1>
   <p  className='p'>Please enter your shipping details.</p>
   <hr />
-  <div class="form">
+  <div className="form">
     
-  <div class="fields fields--2">
-    <label class="field">
-      <span class="field__label" for="firstname">First name</span>
-      <input class="field__input" type="text" id="firstname" name='firstName' value={form.firstName} onChange={changeHandler} />
+  <div className="fields fields--2">
+    <label className="field">
+      <span className="field__label" htmlFor="firstname">First name</span>
+      <input className="field__input" type="text" id="firstname" name='firstName' value={form.firstName} onChange={changeHandler} />
     </label>
-    <label class="field">
-      <span class="field__label" for="lastname">Last name</span>
-      <input class="field__input" type="text" id="lastname" name='lastName' value={form.lastName} onChange={changeHandler} />
+    <label className="field">
+      <span className="field__label" htmlFor="lastname">Last name</span>
+      <input className="field__input" type="text" id="lastname" name='lastName' value={form.lastName} onChange={changeHandler} />
     </label>
   </div>
-  <label class="field">
-    <span class="field__label" for="address">Address</span>
-    <input class="field__input" type="text" name='address' value={form.address} id="address" onChange={changeHandler}/>
+  <label className="field">
+    <span className="field__label" htmlFor="address">Address</span>
+    <input className="field__input" type="text" name='address' value={form.address} id="address" onChange={changeHandler}/>
   </label>
-  <label class="field">
-    <span class="field__label" for="country">Country</span>
-    <select class="field__input" name='country' value={form.country} id="country" onChange={changeHandler}>
+  <label className="field">
+    <span className="field__label" htmlFor="country">Country</span>
+    <select className="field__input" name='country' value={form.country} id="country" onChange={changeHandler}>
       <option value=""></option>
       <option value="india">India</option>
       <option value="unitedstates">United States</option>
     </select>
   </label>
-  <div class="fields fields--3">
-    <label class="field">
-      <span class="field__label" for="zipcode">Zip code</span>
-      <input class="field__input" type="text" name='pincode' value={form.pincode} id="zipcode" onChange={changeHandler}/>
+  <div className="fields fields--3">
+    <label className="field">
+      <span className="field__label" htmlFor="zipcode">Zip code</span>
+      <input className="field__input" type="text" name='pincode' value={form.pincode} id="zipcode" onChange={changeHandler}/>
     </label>
-    <label class="field">
-      <span class="field__label" for="city">City</span>
-      <input class="field__input" type="text" name='city' value={form.city} id="city" onChange={changeHandler}/>
+    <label className="field">
+      <span className="field__label" htmlFor="city">City</span>
+      <input className="field__input" type="text" name='city' value={form.city} id="city" onChange={changeHandler}/>
     </label>
-    <label class="field">
-      <span class="field__label" for="state">State</span>
-      <input type="text" class="field__input" name='state' value={form.state} id="state" onChange={changeHandler}/>
+    <label className="field">
+      <span className="field__label" htmlFor="state">State</span>
+      <input type="text" className="field__input" name='state' value={form.state} id="state" onChange={changeHandler}/>
        
     </label>
   </div>
   </div>
   <hr/>
-  <button onClick={clickHandler} class="button">Continue</button>
+  <button onClick={clickHandler} className="button">Continue</button>
 </div>    
     </>
   )

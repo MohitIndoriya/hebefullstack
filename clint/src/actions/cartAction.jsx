@@ -1,4 +1,5 @@
 import axios from "axios"
+import { toast } from "react-toastify";
 
 export  const getcart=()=>async (dispatch)=>{
    try{
@@ -11,7 +12,7 @@ export  const getcart=()=>async (dispatch)=>{
         
     })
     let data = await res.json();
-    console.log(data.data)
+    // console.log(data.data)
    return  dispatch({
     type:"GETCART",
     payload:data.data
@@ -25,7 +26,7 @@ export  const getcart=()=>async (dispatch)=>{
           
           
         })
-    console.log("Hello")
+    // console.log("Hello")
    }
 }
 export const HandleQuantiy=({id,quantity})=>async (dispatch)=>{
@@ -45,7 +46,7 @@ export const HandleQuantiy=({id,quantity})=>async (dispatch)=>{
         })
         
     }catch(e){
-        console.log("errFound");
+        // console.log("errFound");
     }
     try{
         let token=localStorage.getItem("token");
@@ -66,7 +67,7 @@ export const HandleQuantiy=({id,quantity})=>async (dispatch)=>{
         })
        }catch(e){
         
-        console.log("Hello")
+        // console.log("Hello")
        }
 
 }
@@ -102,7 +103,7 @@ export const removedata=(id)=>async(dispatch)=>{
         })
        }catch(e){
         
-        console.log("Hello")
+        // console.log("Hello")
        }
 
 
@@ -130,11 +131,30 @@ export const addtocart=(e)=>async(dispatch)=>{
         let data = await res.json();
         if(res.status==200){
 
-            alert("Added To Cart");
+            toast.success('Added To Cart', {
+                position: "top-right",
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+              });
+            
         }
         else{
 
-            alert("Already In Cart");
+            toast.warn('Already In Cart', {
+                position: "top-right",
+                autoClose: 1500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+              });
         }
         
     } catch (error) {
@@ -159,6 +179,6 @@ export const addtocart=(e)=>async(dispatch)=>{
         })
        }catch(e){
         
-        console.log("Hello")
+        // console.log("Hello")
        }
 }

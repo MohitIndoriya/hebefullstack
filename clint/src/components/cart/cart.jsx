@@ -17,6 +17,7 @@ import { addtocart, getcart, HandleQuantiy, removedata } from '../../actions/car
 import { display, height, padding } from '@mui/system'
 import { Link, useNavigate } from 'react-router-dom'
 import './cart.css'
+import { toast } from 'react-toastify'
 
 
 
@@ -36,6 +37,16 @@ export function Cart() {
   const handleClick = (newSize) => {
     if (!localStorage.getItem("token")) {
       navigate('/login');
+      toast.warn('Login First', {
+        position: "top-right",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
     else {
       setSize(newSize)

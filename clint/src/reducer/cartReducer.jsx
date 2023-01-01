@@ -31,7 +31,7 @@ export const cartReducer=(state=intialCart,{type,payload})=>{
                         let arr=payload.reduce((ac,el)=>{
                            return ac+(el.price*el.quantity)
                         },0)
-                        console.log(arr,"payload");
+                        // console.log(arr,"payload");
                      return {
                         ...state,
                         cart:payload,total:arr
