@@ -138,6 +138,16 @@ justify-content: space-between;
   background-color: #ddd;
 }
 
+.profileDown{
+  font-size: 1.2rem;
+}
+
+.dropDown{
+  right: 4%!important;
+  top: 10%!important;
+  
+}
+
 .profileDown:hover{
   background-color: white;
   color:#caafa8;
@@ -162,11 +172,21 @@ justify-content: space-between;
   width: 35px;
   height: 35px;
 }
+.dropDown{
+  right: 8%!important;
+  top: 11%!important;
+  
+}
 }
 @media screen and (max-width: 600px) {
   .column {
     width: 100%;
     height: auto;
+  }
+  .dropDown{
+    right: 20%!important;
+    top: 11%!important;
+    
   }
 }
 
