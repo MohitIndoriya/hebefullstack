@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Input, Heading, Container, Button } from "@chakra-ui/react"
+import { Box, Input, Heading, Container, Button, Image } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
@@ -42,8 +42,10 @@ export default function Login() {
           <Button colorScheme='black' textColor="#caafa8" variant='ghost' width="100%" bg="white" marginTop="50px" borderRadius="0px" onClick={handleSubmit}>
             Log in
           </Button>
-          <a href='http://localhost:8080/google'><Button colorScheme='black' textColor="#caafa8" variant='ghost' width="100%" bg="white" marginTop="50px" borderRadius="0px" >
-            Login With Google
+          <a href='http://localhost:8080/google'><Button colorScheme='black' textColor="#caafa8" display={"flex"} gap="10px" variant='ghost' width="100%" bg="white" marginTop="10px" borderRadius="0px" >
+            <Image src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png" width="30px" height="30px" />
+            <span>Login With Google</span>
+
           </Button></a>
 
           <Link to="/createAccount" ><Heading as='h6' size='md' textAlign="left" fontWeight="normal" paddingTop="50px" >Create account</Heading></Link>
