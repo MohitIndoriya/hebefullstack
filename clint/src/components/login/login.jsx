@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { Signin } from '../../actions/userActions'
 import {useNavigate} from "react-router-dom"
+import { useEffect } from 'react'
 
 
 export default function Login() {
@@ -22,6 +23,13 @@ export default function Login() {
     isAuth&&alert("Login Succesfull")
 isAuth&&navigate("/")
     
+    useEffect(()=>{
+      if(localStorage.getItem("token")){
+        navigate('/');
+      }
+    },[])
+
+
   return (
     <Box bg="#caafa8">
     <Container>
