@@ -1,7 +1,8 @@
 const express=require("express");
 const User = require("../database/user");
 let jwt=require("jsonwebtoken")
-let argon2=require("argon2")
+let argon2=require("argon2");
+const { checkToken } = require("../miscFunction/CommonFunction");
 const app=express.Router();
 app.post("/signup",async(req,res)=>{
     let {email,password,firstName,lastName,contact}=req.body;
@@ -46,4 +47,21 @@ try{
     res.status(401).send(e.message)
 }
 })
+
+app.get('/loggedIn/:token',async(req,res)=>{
+    let token = req.params.token;
+    try{
+        let data= await checkToken(token);
+        res.send({
+            data:data
+        })
+    }catch(err){
+        res.send({
+            err:err.message
+        })
+    }
+})
+
+
+
 module.exports=app
