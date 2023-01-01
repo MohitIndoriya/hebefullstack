@@ -102,5 +102,14 @@ const deleteCartProduct =async(user,productId)=>{
 
 }
 
+const deleteCart=async(user)=>{
 
-module.exports={getAllCartData,addToCart,updateCart,deleteCartProduct};
+    const deleteCart = await cartModel.deleteMany({userId:user.id});
+
+    return deleteCart;
+
+
+}
+
+
+module.exports={getAllCartData,addToCart,updateCart,deleteCartProduct,deleteCart};

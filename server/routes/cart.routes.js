@@ -1,5 +1,5 @@
 const {Router} =require('express');
-const { getAllCartData, addToCart, updateCart, deleteCartProduct } = require('../controllers/cart.controllers');
+const { getAllCartData, addToCart, updateCart, deleteCartProduct, deleteCart } = require('../controllers/cart.controllers');
 const { authentication } = require('../middleware/authentication');
 
 
@@ -95,6 +95,25 @@ cartRouter.delete('/cart/:productId',authentication,async(req,res)=>{
             data:cartData
         })
 
+
+    }catch(err){
+        res.status(500).send({
+            err:err.message
+        })
+    }
+
+
+})
+
+cartRouter.get('/cart/delete',authentication,async(req,res)=>{
+
+    try{
+
+        const user = req.user;
+        const cartData= await deleteCart(user);
+        res.send({
+            data:cartData
+        })
 
     }catch(err){
         res.status(500).send({

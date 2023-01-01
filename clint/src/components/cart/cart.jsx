@@ -115,7 +115,7 @@ export function Cart() {
             <div style={{fontSize:"30px"}}>SubTotal </div>
             <div style={{fontSize:"30px"}} >$ {total.toFixed(2)}</div></div>
             <p style={{marginLeft:"50px",fontSize:"12px" ,color:"grey", marginTop:"50px"}} >Shipping, taxes, and discount codes calculated at checkout.</p>
-           <Box alignItems="center" m="auto" display="block" marginTop={50} w="50%" textAlign="center" padding="10px 0px" color="white"  fontSize="20px" bgColor="#caafa8"> <Link to="/checkout">Checkout</Link></Box>
+           <Box alignItems="center" m="auto" display="block" marginTop={50} w="50%" textAlign="center" padding="10px 0px" color="white"  fontSize="20px" bgColor="#caafa8"> <Link to="/address">Checkout</Link></Box>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import { getcart } from '../../actions/cartAction';
 import "./Address.css"
 
 
@@ -19,7 +22,7 @@ const initialForm ={
 const Address = () => {
 
     const [form,setForm] = useState(initialForm);
-
+    const dispatch=useDispatch();
     const changeHandler=(e)=>{
         const {value,name} = e.target;
         setForm({...form,[name]:value});
@@ -36,14 +39,39 @@ const Address = () => {
         let data = await res.json();
         
         let res1 = await fetch(`http://localhost:8080/users/loggedIn/${token}`);
-        let data1 = await res.json();
+        let data1 = await res1.json();
 
         let orderDetails={
             userId:data1.data["_id"],
-            cartData:data.data
+            cartData:data.data,
+            address:form
         }
 
+        let res2 = await fetch(`http://localhost:8080/order`,{
+            method:"POST",
+            body:JSON.stringify(orderDetails),
+            headers:{
+                "Content-Type":"application/json",
+                token:token
+            }
+        })
+
+        let data2 = await res2.json();
         
+        let res3 = await fetch(`http://localhost:8080/cart/delete`,{
+            method:"GET",
+            headers:{
+                token:token
+            }
+        })
+        
+        let data3 = await res3.json();
+        // console.log(data3);
+        dispatch({
+            type:"GETCART",
+            payload:[]
+        })
+        Navigate('/payment')
 
     }
 
