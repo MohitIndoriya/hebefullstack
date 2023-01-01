@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, Heading, Image, Stack, Text ,Button,Divider, CardFooter,ButtonGroup} from "@chakra-ui/react"
+import { Box, Card, CardBody, Heading, Image, Stack, Text ,Button,Divider, CardFooter,ButtonGroup, Select} from "@chakra-ui/react"
 import axios from "axios"
 import React from 'react'
 import { useState } from "react"
@@ -28,16 +28,22 @@ useEffect(()=>{
    
    
   return (
-    <Box display="grid" className="productsDisplay" gridTemplateColumns="repeat(3,1fr)" padding="30px" rowGap="15px" m="auto !important" width="100%">{
-
-        arr.map((e)=>{
-            return <Card height="100%" key={e["_id"]}  margin={"auto"}  boxShadow={"0 0 3px grey"} maxW='sm'>
+    <div className="productPageContainer">
+    <select className="sortSelect">
+      <option value="">Sort By Price</option>
+      <option value="asc">Low To High</option>
+      <option value="desc">High To Low</option>
+    </select>
+    <Box display="grid" className="productsDisplay" gridTemplateColumns="repeat(3,1fr)"  gap="15px" m="auto !important" width="100%">{
+      
+      arr.map((e)=>{
+        return <Card height="100%" key={e["_id"]}  margin={"auto"}   width="100%">
             <CardBody>
              <Link to ={`/product/${e["_id"]}`}> <Image
                 src={e.image}
                 alt='Green double couch with wooden legs'
                 borderRadius='lg'
-              /></Link>
+                /></Link>
               <Stack mt='6' spacing='3'>
                 <Heading size='md'>{e.title}</Heading>
                 <Text>
@@ -53,23 +59,23 @@ useEffect(()=>{
               <ButtonGroup spacing='2'>
                
                 <Button variant='ghost' colorScheme='blue' onClick={()=>{
-                    if(!localStorage.getItem("token")){
-                      navigate('/login');
-                      toast.warn('Login First', {
-                        position: "top-right",
-                        autoClose: 1500,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light",
-                      });
-                    }
-                    else{
-
-                      dispatch(addtocart(e))
-                    }
+                  if(!localStorage.getItem("token")){
+                    navigate('/login');
+                    toast.warn('Login First', {
+                      position: "top-right",
+                      autoClose: 1500,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: "light",
+                    });
+                  }
+                  else{
+                    
+                    dispatch(addtocart(e))
+                  }
                 }}>
                   Add to cart
                 </Button>
@@ -78,6 +84,7 @@ useEffect(()=>{
           </Card>
         })
         }</Box>
+        </div>
   )
      
   

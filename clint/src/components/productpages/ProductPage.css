@@ -2,6 +2,20 @@
 .Slider{
     overflow: hidden;
 }
+.sortSelect{
+    padding: 1%;
+    outline: none;
+    box-shadow: 0 0 3px grey;
+    float: right;
+    margin-bottom: 2%;
+    width: 10%;
+    
+}
+.productPageContainer{
+    width: 90%;
+    margin: 2% auto;
+
+}
 
 @media screen and (max-width:900px) {
     .productsDisplay{
