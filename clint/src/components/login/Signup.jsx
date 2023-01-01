@@ -49,6 +49,12 @@ export default function Signup() {
    
 
     }
+
+    useEffect(()=>{
+      if(localStorage.getItem("token")){
+        navigate('/');
+      }
+    },[])
   return (
     <Box bg="#caafa8">
         
