@@ -16,3 +16,9 @@
     border: 3px solid #caafa8;
     /* creates padding around scroll thumb */
 }
+
+.quantityCart{
+   width: fit-content;
+   display: block;
+   margin-left: 8px;
+}

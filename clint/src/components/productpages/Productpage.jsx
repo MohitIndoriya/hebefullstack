@@ -6,6 +6,7 @@ import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { addtocart } from "../../actions/cartAction"
+import "./ProductPage.css"
 
 export default function Productpage() {
     let [arr,setarr]=useState([])
@@ -26,10 +27,10 @@ console.log(arr);
    
    
   return (
-    <Box display="grid" gridTemplateColumns="repeat(3,1fr)" m="auto" width="95%">{
+    <Box display="grid" className="productsDisplay" gridTemplateColumns="repeat(3,1fr)" padding="30px" rowGap="15px" m="auto !important" width="100%">{
 
         arr.map((e)=>{
-            return <Card maxW='sm'>
+            return <Card height="100%"  margin={"auto"}  boxShadow={"0 0 3px grey"} maxW='sm'>
             <CardBody>
              <Link to ={`/product/${e["_id"]}`}> <Image
                 src={e.image}

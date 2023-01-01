@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { getcart } from '../../actions/cartAction';
 import "./Address.css"
 
@@ -27,6 +27,7 @@ const Address = () => {
         const {value,name} = e.target;
         setForm({...form,[name]:value});
     }
+    const navigate = useNavigate();
     const clickHandler=async()=>{
         let token=localStorage.getItem("token");
         let res=await fetch('http://localhost:8080/cart',{
@@ -71,7 +72,7 @@ const Address = () => {
             type:"GETCART",
             payload:[]
         })
-        Navigate('/payment')
+        navigate('/payment')
 
     }
 

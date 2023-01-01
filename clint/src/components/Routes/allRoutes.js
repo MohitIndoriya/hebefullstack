@@ -11,6 +11,7 @@ import Productpage from "../productpages/Productpage"
 import Product from "../Product Page/Product"
 // import Checkout from "../checkout/checkout"
 import Address from "../Address/Address"
+import Payment from "../Payment/Payment"
 
 
 
@@ -28,6 +29,7 @@ export default function AllRoutes() {
         <Route path="/products/:category" element={<Productpage/>}/>
         <Route path="product/:id" element={<Product/>}/>
         <Route path="/address" element={<Address/>}/>
+        <Route path="/payment" element={<Payment/>}/>
         
         <Route path="/" element={<Home/>}/>
 
