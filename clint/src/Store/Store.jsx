@@ -3,7 +3,6 @@ import thunk from "redux-thunk"
 import { reducer } from "../reducer/reducer"
 import {cartReducer} from "../reducer/cartReducer"
 import { loginReducer } from "../reducer/loginReducer"
-import logger from 'redux-logger'
 
 let rootreducer=combineReducers({
     auth:reducer,
@@ -11,4 +10,4 @@ let rootreducer=combineReducers({
     user:loginReducer
 })
 
-export  const  store=legacy_createStore(rootreducer,applyMiddleware(thunk,logger))
+export  const  store=legacy_createStore(rootreducer,applyMiddleware(thunk))

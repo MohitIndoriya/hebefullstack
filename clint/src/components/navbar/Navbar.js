@@ -135,7 +135,7 @@ const Navbar1 = () => {
         {
           user.image?<div>
             <Image onClick={()=>{setModal(!openModal)}} height="50px" className='profileImage' width="50px" borderRadius="50%" src={user.image}/>
-            {openModal?<Box backgroundColor={"#caafa8"}  position={"fixed"} top={"9%"} right={"60px"} borderRadius={"3px"} boxShadow={"0 0 3px white"} >
+            {openModal?<Box backgroundColor={"#caafa8"} className="dropDown" position={"fixed"} top={"9%"} right={"60px"} borderRadius={"3px"} boxShadow={"0 0 3px white"} >
               <p className='profileDown' style={{padding:"12px"}}>{user.firstName}</p>
               <p className='profileDown' style={{padding:"12px"}} onClick={()=>{
                 localStorage.removeItem("token");
