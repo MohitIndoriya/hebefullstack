@@ -12,6 +12,7 @@ import Product from "../Product Page/Product"
 // import Checkout from "../checkout/checkout"
 import Address from "../Address/Address"
 import Payment from "../Payment/Payment"
+import AdminLogin from "../admin/adminlogin"
 
 
 
@@ -30,7 +31,7 @@ export default function AllRoutes() {
         <Route path="product/:id" element={<Product/>}/>
         <Route path="/address" element={<Address/>}/>
         <Route path="/payment" element={<Payment/>}/>
-        
+        <Route path="/admin" element={<AdminLogin/>}/>
         <Route path="/" element={<Home/>}/>
 
     </Routes>
