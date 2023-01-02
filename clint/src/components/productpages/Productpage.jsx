@@ -47,7 +47,7 @@ useEffect(()=>{
                 borderRadius='lg'
                 /></Link>
               <Stack mt='6' spacing='3'>
-                <Heading size='md'>{e.title}</Heading>
+                <Heading size='md'>{e.title.replace('//','-')}</Heading>
                 <Text>
                  {e.desciption}
                 </Text>

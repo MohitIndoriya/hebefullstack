@@ -17,7 +17,7 @@ p {
 
 .hero-section {
   background-image: url('https://cdn.shopify.com/s/files/1/1132/3440/files/KATE7833_3024x.jpg');
-  height: 100vh;
+  height: 130vh;
   margin: 0px;
   padding: 0px;
   background-position: center center;
@@ -462,24 +462,32 @@ a {
     /* margin-bottom: 10px; */
     text-align: center;
   }
-  .bannerText{
+
+  .bannerText {
     display: grid;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
-  .bannerText >span:first-child{
+
+  .bannerText>span:first-child {
     background-color: transparent;
     color: white;
   }
-  .bannerText >span:last-child{
+
+  .bannerText>span:last-child {
     text-align: center;
     margin-top: 2%;
+    margin-left: 0px;
   }
-  
 
-.about-section {
-  padding: 5px;
-}
-.about-section p{
-  width: 80%;
-}
+  .hero-section{
+    height: 150vh;
+  }
+
+  .about-section {
+    padding: 5px;
+  }
+
+  .about-section p {
+    width: 80%;
+  }
 }

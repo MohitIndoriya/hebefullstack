@@ -116,3 +116,12 @@ input[type=email] {
     margin: auto;
     margin-bottom: 5px;
 }
+
+@media screen and (max-width:900px){
+    .footerPara{
+        width: 60%;
+    }
+    .emailBox{
+        width: 50%;
+    }
+}

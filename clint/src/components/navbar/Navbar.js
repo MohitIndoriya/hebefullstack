@@ -108,7 +108,7 @@ const Navbar1 = () => {
       <div className="parent">
         <div style={{ display: "flex", padding: "10px", justifyContent: "space-between", fontSize: "50px", color: "#fff", width: "100%", cursor: "pointer" }}>
 
-          <Link to="/" style={{ width: "130px" }}> <TypewriterComponent
+          <Link to="/" style={{ width: "150px" }}> <TypewriterComponent
 
             options={{
               strings: ["hebe."],
@@ -138,7 +138,7 @@ const Navbar1 = () => {
                 </div>
                 <div className="column">
                   <h3>-</h3>
-                  <Link to="/products/jewelery">jewelery</Link>
+                  <Link to="/products/jewelery">Jewelery</Link>
                   <Link to="/products/sunglasses">Sun glasses</Link>
                   <Link to="/products/skirts">Skirts</Link>
                 </div>

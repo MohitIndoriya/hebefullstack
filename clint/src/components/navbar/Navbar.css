@@ -49,7 +49,16 @@ justify-content: space-between;
   padding: 10px;
   width: fit-content;
 }
+.navLinks >a{
+  padding: 0px !important;
+  margin: 0px !important;
+  display: block;
+  margin: auto !important;
+}
 
+.navLinks >a:first-child{
+  margin-top: -20px !important;
+}
 /* 
 .navbar {
   overflow: hidden;
