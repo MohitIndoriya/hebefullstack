@@ -39,8 +39,7 @@ export default function Product() {
  
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-  return (
-    <div className="container">
+  return (productArray[0]?<div className="container">
       <div id="top">
         <div id="topLeft">
           {
@@ -54,13 +53,13 @@ export default function Product() {
           }
         </div>
         <div id="topRight">
-          <div>{productArray[0].category}</div>
-          <h1>{productArray[0].title}</h1>
+          <div>{productArray[0].category?(productArray[0].category).toUpperCase():""}</div>
+          <h1>{productArray[0].title?productArray[0].title.replace('//','-'):""}</h1>
           <div>
-            <div style={{}}>$ {productArray[0].price + "  "}</div>
-            <div style={{ fontSize: "15px", display: "flex" }}>
+            <div style={{fontSize:"1.6rem"}}>$ {productArray[0].price + "  "}</div>
+            <div style={{ fontSize: "1.4rem", display: "flex" }}>
               <span>
-                or 6 weekly interest-free payments from $13.32 with Laybuy
+                Or 6 Weekly Interest-Free Payments From $13.32 With Laybuy
               </span>
               <img
                 src="https://www.laybuy.com/assets/laybuy-logo-small.svg"
@@ -68,9 +67,9 @@ export default function Product() {
               />
             </div>
           </div>
-          <div style={{ fontSize: "15px", display: "flex" }}>
-            or ${} interest-free payment of $ $
-            { }` with
+          <div style={{ fontSize: "1.4rem", display: "flex" }}>
+            Or ${} Interest-Free Payment 
+            { }` With
             <img
               style={{ height: "20px", width: "50px", marginLeft: "10px" }}
               src="https://mma.prnewswire.com/media/1224081/Afterpay_Mint_Logo.jpg?p=twitter"
@@ -140,7 +139,19 @@ export default function Product() {
 
               <TabPanels>
                 <TabPanel>
-                  <p>{productArray[0].desciption}</p>
+                <h3>CLICK & COLLECT</h3>
+                  <p>
+                    For all online orders we offer the option to ‘pick up
+                    instore’ which means you can whip in and pick up your
+                    parcel. Your purchase will be packaged up, ready to go.
+                  </p>
+
+                  <p>
+                    If you’re not able to get out of the house but are local, we
+                    are happy to deliver your item to your door. There is a
+                    charge of just $3 and delivery takes place after shop hours
+                    (5pm-7pm). Delivery applies to Masterton and Carterton.
+                  </p>
                 </TabPanel>
                 <TabPanel>
                   <h3>CLICK & COLLECT</h3>
@@ -246,6 +257,6 @@ export default function Product() {
         <div id="topBottom">You may also like</div>
         <SliderProducts />
       </div>
-    </div>
+    </div>:""
   );
 }
