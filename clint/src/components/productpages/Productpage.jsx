@@ -16,23 +16,31 @@ export default function Productpage() {
     let {category}=useParams() || searchcategory;
     let dispatch=useDispatch()
     const navigate =useNavigate();
-    const data=async()=>{
-       let  products=await axios.get(`http://localhost:8080/products?category=${category}`)
+    const data=async(url)=>{
+       let  products=await axios.get(url)
       //  console.log(products.data);
      setarr(products.data.data)
        
     }
+    console.log(arr)
 useEffect(()=>{
-    data()
+    data(`http://localhost:8080/products?category=${category}`)
     
 },[category])
 // console.log(arr);
    
+const sortAsc = (e) => {
+ if (e.target.value === "asc"){
+  data(`http://localhost:8080/products?category=${category}&sortby=price&order=asc`)
+ }else {
+  data(`http://localhost:8080/products?category=${category}&sortby=price&order=desc`)
+ }
+}
    
   return (
     <div className="productPageContainer">
-    <select className="sortSelect">
-      <option value="">Sort By Price</option>
+    <select  onChange={sortAsc} className="sortSelect">
+      <option value="" >Sort By Price</option>
       <option value="asc">Low To High</option>
       <option value="desc">High To Low</option>
     </select>
