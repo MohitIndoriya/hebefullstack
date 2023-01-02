@@ -21,11 +21,11 @@ export default function AdminLogin() {
     dispatch(Adminlogin({ email, password }))
   }
   // isAuth && alert("Login Succesfull")
-  isAuth && navigate("/")
+  isAuth && navigate("/admin/dashboard")
 
   useEffect(() => {
     if (localStorage.getItem("Admintoken")) {
-      navigate('/');
+      navigate('/admin/dashboard');
     }
   }, [])
 
