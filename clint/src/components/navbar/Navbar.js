@@ -33,7 +33,6 @@ const Navbar1 = () => {
   const [openModal, setModal] = useState(false);
   const [catg, setCatg] = useState("");
   const navigate = useNavigate();
-  const {categoryChanged, searchcategory} = useContext(Category)
   useEffect(() => {
     let token = localStorage.getItem('token');
     if (token) {
@@ -97,7 +96,6 @@ const Navbar1 = () => {
       }
       
       const handleClick = () => {
-        categoryChanged(catg)
         onClose()
         setCatg("")
       }
