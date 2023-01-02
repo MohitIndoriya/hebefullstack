@@ -26,6 +26,11 @@ let userschema = mongoose.Schema({
   authType: {
     type: String,
   },
+  role:{
+    type:String,
+     enum:["admin","consumer"],
+     default:"consumer"
+  }
 });
 let User = mongoose.model("user", userschema);
 module.exports = User;
