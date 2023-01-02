@@ -14,13 +14,14 @@ productRouter.post("/products",async (req,res)=>{
     try {
      let verify= jwt.verify(token ,process.env.Admin_Secret)
      if(verify){
+        console.log(verify);
       let data= await  productmodel.create({...req.body})
-      req.status(201).send(data)
+     return  res.status(201).send(data)
      }else{
-        res.status(400).send("user not found")
+      return   res.status(400).send("user not found")
      }
     } catch (error) {
-        res.status(400).send("inavlid input")
+      return   res.status(400).send(error.message)
     }
 
 })
