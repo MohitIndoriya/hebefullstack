@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom"
 import "./Navbar.css";
+// import { Input } from '@chakra-ui/react'
 import TypewriterComponent from "typewriter-effect";
 import PersonIcon from '@mui/icons-material/Person';
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
 import ShoppingBagSharpIcon from '@mui/icons-material/ShoppingBagSharp';
-import { Box, Icon, Image } from '@chakra-ui/react';
+import { Box, Icon, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text } from '@chakra-ui/react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
@@ -23,14 +24,16 @@ import axios from 'axios';
 import { loginUser, logoutUser } from '../../actions/loginAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSelect } from '@mui/base';
-
+import { Category } from '../../ContextAPI/CategoryProvider';
 
 
 const Navbar1 = () => {
   const dispatch = useDispatch();
   const { user, cart } = useSelector((state) => state);
   const [openModal, setModal] = useState(false);
+  const [catg, setCatg] = useState("");
   const navigate = useNavigate();
+  const {categoryChanged, searchcategory} = useContext(Category)
   useEffect(() => {
     let token = localStorage.getItem('token');
     if (token) {
@@ -81,7 +84,25 @@ const Navbar1 = () => {
   }
 
 
+  const styles = {borderBottom:"1px solid white",
+   borderRadius:"0px",
+     color:"white",
+      fontSize: '31px',
+       fontFamily:"sans-serif",
+       paddingBottom:"3px"
+      }
 
+      const handleChange = (event) => {
+        setCatg(event.target.value)
+      }
+      
+      const handleClick = () => {
+        categoryChanged(catg)
+        onClose()
+        setCatg("")
+      }
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
       <div className="parent">
@@ -148,7 +169,26 @@ const Navbar1 = () => {
                 </Box> : ""}
               </div> : <Link  to="/Login"> <Icon as={PersonIcon} /></Link>
             }
-            <Icon as={SearchSharpIcon} />
+            <Icon onClick={onOpen} as={SearchSharpIcon} />
+      
+      <Modal size={'full'} height={"100%"} isOpen={isOpen} onClose={onClose}>
+        <ModalContent style={{backgroundColor:"#CAAFA8", justifyItems:"center"}} height={"100%"} >
+        <ModalHeader>Modal Title</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody style={{display:"flex",margin:"auto",  alignItems:"center"}}>
+            <Input value={catg} onChange={handleChange} style={styles}
+            size="xl"  variant='unstyled' type={"text"} placeholder="Search Our Store"
+             _placeholder={{ color: 'white.1' }}
+             fontWeight={"hairline"} />
+          <Link to={`/products/${catg}`}>
+              <Icon  fontSize="50px" color={"white"} paddingBottom="7px" borderBottom="1px solid white" onClick={handleClick} as={SearchSharpIcon} />
+          </Link>
+          </ModalBody>
+
+          <ModalFooter>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
             <Cart />
           </div>
         </div>

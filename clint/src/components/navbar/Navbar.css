@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+::placeholder { 
+  color: white; 
+}
 .parent{
 width: 100%;
 background-color: #CAAFA8;
