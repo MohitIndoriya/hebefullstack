@@ -8,7 +8,8 @@
     background-color: #caafa8;
     color: #ffffff;
     padding: 5px;
-    margin: 80px auto;
+    margin: 0px auto;
+    padding-top: 10%;
 }
 #top{
     display: flex;
@@ -23,9 +24,11 @@
 }
 #topRight{
     padding: 3px;
+    font-size:1.5rem;
 }
 #topRight > h1{
     margin-top: -3px;
+    font-size: 2rem;
 }
 #topRight > div:nth-child(3) div:nth-child(1){
     margin-bottom: 25px;
@@ -84,6 +87,7 @@
 }
 #topRight > div:nth-child(11)  p{
     margin-top: 30px;
+    font-size: 1.2rem;
 }
 #bottom {
     text-align: center;

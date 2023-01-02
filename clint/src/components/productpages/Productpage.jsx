@@ -1,17 +1,19 @@
 import { Box, Card, CardBody, Heading, Image, Stack, Text ,Button,Divider, CardFooter,ButtonGroup, Select} from "@chakra-ui/react"
 import axios from "axios"
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from "react"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { toast } from "react-toastify"
 import { addtocart } from "../../actions/cartAction"
+import { Category } from "../../ContextAPI/CategoryProvider"
 import "./ProductPage.css"
 
 export default function Productpage() {
+    const {searchcategory} = useContext(Category)
     let [arr,setarr]=useState([])
-    let {category}=useParams()
+    let {category}=useParams() || searchcategory;
     let dispatch=useDispatch()
     const navigate =useNavigate();
     const data=async()=>{
@@ -45,7 +47,7 @@ useEffect(()=>{
                 borderRadius='lg'
                 /></Link>
               <Stack mt='6' spacing='3'>
-                <Heading size='md'>{e.title}</Heading>
+                <Heading size='md'>{e.title.replace('//','-')}</Heading>
                 <Text>
                  {e.desciption}
                 </Text>
