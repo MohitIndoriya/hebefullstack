@@ -6,8 +6,6 @@ const { checkToken } = require("../miscFunction/CommonFunction");
 const app=express.Router();
 app.post("/signup",async(req,res)=>{
     let {email,password,firstName,lastName,contact}=req.body;
-console.log("yes")
-console.log(req.body);
     try {
         password=await argon2.hash(password)
         

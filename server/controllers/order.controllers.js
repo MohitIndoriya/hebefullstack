@@ -15,5 +15,14 @@ const postOrder=async(user,body)=>{
 
 }
 
+const getAllOrder=async()=>{
 
-module.exports={postOrder};
+
+
+    return await orderModel.find();
+
+
+}
+
+
+module.exports={postOrder,getAllOrder};
