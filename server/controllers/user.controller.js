@@ -1,6 +1,7 @@
 const userModel = require("../database/user");
 const bcrypt = require("bcrypt");
 const { generateToken } = require("../miscFunction/CommonFunction");
+const User = require("../database/user");
 require("dotenv").config();
 
 const signUp = async (body) => {
@@ -23,10 +24,10 @@ const googleAuth = async (reqest, accessToken, refreshToken, profile, done) => {
     let body = {
       authType: "google",
       firstName: profile.emails[0].value.split("@")[0],
-      img: profile.photos[0].value,
+      image: profile.photos[0].value,
       email: profile.emails[0].value,
     };
-    let newUser = await userModel.create(body);
+    let newUser = await User.create(body);
   }
 
   return done(null, profile);

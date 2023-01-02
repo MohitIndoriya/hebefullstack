@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate } from "react-router-dom"
 import "./Navbar.css";
 import TypewriterComponent from "typewriter-effect";
 import PersonIcon from '@mui/icons-material/Person';
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
 import ShoppingBagSharpIcon from '@mui/icons-material/ShoppingBagSharp';
-import { Icon } from '@chakra-ui/react';
+import { Box, Icon, Image } from '@chakra-ui/react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   Drawer,
   DrawerBody,
@@ -18,10 +20,23 @@ import {
 } from '@chakra-ui/react'
 import { Cart } from '../cart/cart';
 import axios from 'axios';
+import { loginUser, logoutUser } from '../../actions/loginAction';
+import { useDispatch, useSelector } from 'react-redux';
+import { useSelect } from '@mui/base';
 
 
 
 const Navbar1 = () => {
+  const dispatch = useDispatch();
+  const { user, cart } = useSelector((state) => state);
+  const [openModal, setModal] = useState(false);
+  const navigate = useNavigate();
+  useEffect(() => {
+    let token = localStorage.getItem('token');
+    if (token) {
+      loginUser(token, dispatch);
+    }
+  }, [localStorage.getItem("token"), openModal, cart])
 
   function DrawerExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -68,27 +83,28 @@ const Navbar1 = () => {
 
 
   return (
-    <div className="parent">
-      <div style={{ display: "flex", justifyContent: "space-between", fontSize: "50px", marginLeft: "30px", color: "#fff", width: "100%", cursor: "pointer" }}>
+    <>
+      <div className="parent">
+        <div style={{ display: "flex", padding: "10px", justifyContent: "space-between", fontSize: "50px", color: "#fff", width: "100%", cursor: "pointer" }}>
 
-        <Link to="/" style={{ width: "350px" }}> <TypewriterComponent
+          <Link to="/" style={{ width: "130px" }}> <TypewriterComponent
 
-          options={{
-            strings: ["hebe."],
-            loop: true,
-            autoStart: true,
-            typeSpeed: 10,
-            fontSize: '200px'
-          }}
+            options={{
+              strings: ["hebe."],
+              loop: true,
+              autoStart: true,
+              typeSpeed: 1000,
+              fontSize: '200px'
+            }}
 
-        />
-        </Link>
-        <div className="dropdown">
+          />
+          </Link>
+          <div className="dropdown">
 
-          <div><a href="#">SHOP</a></div>
-          <div><a href="#">BRANDS</a></div>
-          <div><a href="#">MY BOYFRIENDS BACK</a></div>
-          <div><a href="#">STAFF EDIT</a></div>
+            <div><a href="#">SHOP</a></div>
+            <div><a href="#">BRANDS</a></div>
+            <div><a href="#">MY BOYFRIENDS BACK</a></div>
+            <div><a href="#">STAFF EDIT</a></div>
             <div className="dropdown-content">
 
               <div className="row">
@@ -115,18 +131,45 @@ const Navbar1 = () => {
             </div>
           </div>
 
-          <div className='navbar'>
 
 
+
+          <div className='navLinks'>
+            {
+              user.firstName!="" ? <div>
+                <Image onClick={() => { setModal(!openModal) }} height="50px" className='profileImage' width="50px" borderRadius="50%" src={user.image?user.image:"https://thumbs.dreamstime.com/b/anonymous-profile-icon-cartoon-style-vector-web-design-isolated-white-background-220529850.jpg"} />
+                {openModal ? <Box backgroundColor={"#caafa8"} className="dropDown" position={"fixed"} top={"9%"} right={"60px"} borderRadius={"3px"} boxShadow={"0 0 3px white"} >
+                  <p className='profileDown' style={{ padding: "12px" }}>{user.firstName}</p>
+                  <p className='profileDown' style={{ padding: "12px" }} onClick={() => {
+                    localStorage.removeItem("token");
+                    navigate('/login');
+                    logoutUser(dispatch);
+                  }}>LogOut</p>
+                </Box> : ""}
+              </div> : <Link  to="/Login"> <Icon as={PersonIcon} /></Link>
+            }
+            <Icon as={SearchSharpIcon} />
+            <Cart />
           </div>
         </div>
-     
-      <div className='navLinks'>
-        <Link to="/Login"> <Icon as={PersonIcon} /></Link>
-        <Icon as={SearchSharpIcon} />
-        <Cart />
+
       </div>
-    </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      {/* Same as */}
+      <ToastContainer />
+    </>
+
   )
 }
 

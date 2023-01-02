@@ -7,10 +7,10 @@
 }
 .footer{
     background-color: #CAAFA8;
-    height: 450px;
+    height: fit-content;
     color: #fff;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 2%;
     letter-spacing: 1px;
     font-family: "Montseerat";
     text-align: center;
@@ -34,7 +34,7 @@ margin-block-start: 1em;
 margin-block-end: 1em;
 margin-inline-start: 0px;
 margin-inline-end: 0px;
-width: 600px;
+width: 35%;
 overflow-wrap: break-word;  
 word-wrap: break-word; 
 word-break: break-word;
@@ -74,6 +74,7 @@ input[type=email] {
 }
 .links{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     margin-left: 0px !important;

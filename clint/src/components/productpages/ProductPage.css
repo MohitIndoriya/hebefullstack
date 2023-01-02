@@ -1,0 +1,34 @@
+
+.Slider{
+    overflow: hidden;
+}
+.sortSelect{
+    padding: 1%;
+    outline: none;
+    box-shadow: 0 0 3px grey;
+    float: right;
+    margin-bottom: 2%;
+    width: 10%;
+    
+}
+.productPageContainer{
+    width: 90%;
+    margin: 2% auto;
+
+}
+
+@media screen and (max-width:900px) {
+    .productsDisplay{
+        grid-template-columns: repeat(2,1fr)!important;
+        gap: 10px;
+    }
+    .Slider{
+        display: none!important;
+    }
+}
+@media screen and (max-width:500px) {
+    .productsDisplay{
+        grid-template-columns: repeat(1,1fr)!important;
+        gap: 10px;
+    }
+}
