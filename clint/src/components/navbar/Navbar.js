@@ -83,22 +83,23 @@ const Navbar1 = () => {
   }
 
 
-  const styles = {borderBottom:"1px solid white",
-   borderRadius:"0px",
-     color:"white",
-      fontSize: '31px',
-       fontFamily:"sans-serif",
-       paddingBottom:"3px"
-      }
+  const styles = {
+    borderBottom: "1px solid white",
+    borderRadius: "0px",
+    color: "white",
+    fontSize: '31px',
+    fontFamily: "sans-serif",
+    paddingBottom: "3px"
+  }
 
-      const handleChange = (event) => {
-        setCatg(event.target.value)
-      }
-      
-      const handleClick = () => {
-        onClose()
-        setCatg("")
-      }
+  const handleChange = (event) => {
+    setCatg(event.target.value)
+  }
+
+  const handleClick = () => {
+    onClose()
+    setCatg("")
+  }
 
 
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -156,8 +157,8 @@ const Navbar1 = () => {
 
           <div className='navLinks'>
             {
-              user.firstName!="" ? <div>
-                <Image onClick={() => { setModal(!openModal) }} height="50px" className='profileImage' width="50px" borderRadius="50%" src={user.image?user.image:"https://thumbs.dreamstime.com/b/anonymous-profile-icon-cartoon-style-vector-web-design-isolated-white-background-220529850.jpg"} />
+              user.firstName != "" ? <div>
+                <Image onClick={() => { setModal(!openModal) }} height="50px" className='profileImage' width="50px" borderRadius="50%" src={user.image ? user.image : "https://thumbs.dreamstime.com/b/anonymous-profile-icon-cartoon-style-vector-web-design-isolated-white-background-220529850.jpg"} />
                 {openModal ? <Box backgroundColor={"#caafa8"} className="dropDown" position={"fixed"} top={"9%"} right={"60px"} borderRadius={"3px"} boxShadow={"0 0 3px white"} >
                   <p className='profileDown' style={{ padding: "12px" }}>{user.firstName}</p>
                   <p className='profileDown' style={{ padding: "12px" }} onClick={() => {
@@ -166,28 +167,40 @@ const Navbar1 = () => {
                     logoutUser(dispatch);
                   }}>LogOut</p>
                 </Box> : ""}
-              </div> : <Link  to="/Login"> <Icon as={PersonIcon} /></Link>
+              </div> : <Link to="/Login"> <Icon as={PersonIcon} /></Link>
             }
             <Icon onClick={onOpen} as={SearchSharpIcon} />
-      
-      <Modal size={'full'} height={"100%"} isOpen={isOpen} onClose={onClose}>
-        <ModalContent style={{backgroundColor:"#CAAFA8", justifyItems:"center"}} height={"100%"} >
-        <ModalHeader height="100%" className="myselfLeft"><Text marginLeft="80px"  paddingTop="30px" fontSize="40px">hebe..</Text></ModalHeader>
-          <ModalCloseButton />
-          <ModalBody style={{display:"flex",margin:"auto",  alignItems:"center"}}>
-            <Input value={catg} onChange={handleChange} style={styles}
-            size="xl"  variant='unstyled' type={"text"} placeholder="Search Our Store"
-             _placeholder={{ color: 'white' }}
-             fontWeight={"hairline"} />
-          <Link to={`/products/${catg}`}>
-              <Icon  fontSize="50px" color={"white"} paddingBottom="9px" marginBottom="-7px" borderBottom="1px solid white" onClick={handleClick} as={SearchSharpIcon} />
-          </Link>
-          </ModalBody>
 
-          <ModalFooter>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+            <Modal size={'full'} height={"100%"} isOpen={isOpen} onClose={onClose}>
+              <ModalContent style={{ backgroundColor: "#CAAFA8", justifyItems: "center" }} height={"100%"} >
+                <ModalHeader height="100%" className="myselfLeft"><Text marginLeft="80px" paddingTop="30px" fontSize="60px" color="white">
+                  <TypewriterComponent
+                    options={{
+                      
+                      strings: ["hebe."],
+                      loop: true,
+                      autoStart: true,
+                      typeSpeed: 1000,
+                      fontSize: '300px'
+                    }}
+
+                  />
+                </Text></ModalHeader>
+                <ModalCloseButton />
+                <ModalBody style={{ display: "flex", margin: "auto", alignItems: "center" }}>
+                  <Input value={catg} onChange={handleChange} style={styles}
+                    size="xl" variant='unstyled' type={"text"} placeholder="Search Our Store"
+                    _placeholder={{ color: 'white' }}
+                    fontWeight={"hairline"} />
+                  <Link to={`/products/${catg}`}>
+                    <Icon fontSize="50px" color={"white"} paddingBottom="9px" marginBottom="-7px" borderBottom="1px solid white" onClick={handleClick} as={SearchSharpIcon} />
+                  </Link>
+                </ModalBody>
+
+                <ModalFooter>
+                </ModalFooter>
+              </ModalContent>
+            </Modal>
             <Cart />
           </div>
         </div>
