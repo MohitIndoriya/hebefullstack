@@ -100,6 +100,7 @@ const Navbar1 = () => {
         setCatg("")
       }
 
+
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -171,15 +172,15 @@ const Navbar1 = () => {
       
       <Modal size={'full'} height={"100%"} isOpen={isOpen} onClose={onClose}>
         <ModalContent style={{backgroundColor:"#CAAFA8", justifyItems:"center"}} height={"100%"} >
-        <ModalHeader>Modal Title</ModalHeader>
+        <ModalHeader height="100%" className="myselfLeft"><Text marginLeft="80px"  paddingTop="30px" fontSize="40px">hebe..</Text></ModalHeader>
           <ModalCloseButton />
           <ModalBody style={{display:"flex",margin:"auto",  alignItems:"center"}}>
             <Input value={catg} onChange={handleChange} style={styles}
             size="xl"  variant='unstyled' type={"text"} placeholder="Search Our Store"
-             _placeholder={{ color: 'white.1' }}
+             _placeholder={{ color: 'white' }}
              fontWeight={"hairline"} />
           <Link to={`/products/${catg}`}>
-              <Icon  fontSize="50px" color={"white"} paddingBottom="7px" borderBottom="1px solid white" onClick={handleClick} as={SearchSharpIcon} />
+              <Icon  fontSize="50px" color={"white"} paddingBottom="9px" marginBottom="-7px" borderBottom="1px solid white" onClick={handleClick} as={SearchSharpIcon} />
           </Link>
           </ModalBody>
 

@@ -3,9 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-::placeholder { 
-  color: white; 
+
+
+.myselfLeft Text{
+  font-size: 42px;
 }
+.myselfLeft {
+  width: 44ch;
+  z-index: 1;
+  white-space: nowrap;
+  -webkit-animation: type 5s steps(20) infinite alternate;
+          animation: type 5s steps(20) infinite alternate;
+}
+
 .parent{
 width: 100%;
 background-color: #CAAFA8;
