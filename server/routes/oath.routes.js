@@ -18,7 +18,7 @@ passport.deserializeUser(function (user, done) {
 
 oathRouter.get(
   "/google",
-  passport.authenticate("google", { scope: ["email"] })
+  passport.authenticate("google", { scope: ["email","profile"] })
 );
 
 oathRouter.get("/googleLoginSucess", (req, res) => {
@@ -27,7 +27,6 @@ oathRouter.get("/googleLoginSucess", (req, res) => {
     let token = generateToken({ email: req.user.emails[0].value,image:req.user.photos[0].value,firstName:req.user.emails[0].value.split('@')[0]});
     res.redirect(`http://localhost:3000/?token=${token}`);
   } catch (err) {
-    // console.log(err.message
     res.send("<h1>Page Not Found</h1>");
   }
 });
