@@ -22,7 +22,7 @@ export default function Productpage() {
      setarr(products.data.data)
        
     }
-    console.log(arr)
+    // console.log(arr)
 useEffect(()=>{
     data(`http://localhost:8080/products?category=${category}`)
     
