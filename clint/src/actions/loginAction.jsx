@@ -12,7 +12,7 @@ export const loginUser =async(token,dispatch)=>{
             payload:data.data
         })
     }catch(err){
-        console.log(err);
+       // console.log(err);
     }
 
 

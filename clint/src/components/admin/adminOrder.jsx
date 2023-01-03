@@ -36,7 +36,7 @@ return setdata((data)=>data=d.data.data);
         db();
         
     },[])
-    console.log(data)
+  
     return (
 <TableContainer>
   <Table variant='simple'>
