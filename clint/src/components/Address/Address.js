@@ -87,7 +87,6 @@ const Address = () => {
   return (
     <>
         <div className="addressContainer">
-  <h1 className='h1'>Shipping</h1>
   <p  className='p'>Please enter your shipping details.</p>
   <hr />
   <div className="form">
