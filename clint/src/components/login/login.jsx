@@ -38,7 +38,7 @@ export default function Login() {
           <Heading as='h6' size='md' textAlign="left" fontWeight="normal" paddingTop="30px" >Email</Heading>
           <Input variant='flushed' value={email} onChange={(e) => setEmail(e.target.value)} />
           <Heading as='h6' size='md' textAlign="left" fontWeight="normal" paddingTop="20px" >Password</Heading>
-          <Input variant='flushed' value={password} onChange={(e) => setPassword(e.target.value)} />
+          <Input variant='flushed' value={password} type="password" onChange={(e) => setPassword(e.target.value)} />
           <Button colorScheme='black' textColor="#caafa8" variant='ghost' width="100%" bg="white" marginTop="50px" borderRadius="0px" onClick={handleSubmit}>
             Log in
           </Button>
