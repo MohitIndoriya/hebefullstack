@@ -19,11 +19,12 @@ const signUp = async (body) => {
 
 const googleAuth = async (reqest, accessToken, refreshToken, profile, done) => {
   let user = await userModel.findOne({ email: profile.emails[0].value });
-
+  
+  console.log(profile);
   if (!user) {
     let body = {
       authType: "google",
-      firstName: profile.emails[0].value.split("@")[0],
+      firstName: profile.name.givenName,
       image: profile.photos[0].value,
       email: profile.emails[0].value,
     };

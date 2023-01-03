@@ -138,7 +138,7 @@ const Navbar1 = () => {
                 </div>
                 <div className="column">
                   <h3>-</h3>
-                  <Link to="/products/jewelery">Jewelery</Link>
+                  <Link to="/products/jewellery">Jewellery</Link>
                   <Link to="/products/sunglasses">Sun glasses</Link>
                   <Link to="/products/skirts">Skirts</Link>
                 </div>
