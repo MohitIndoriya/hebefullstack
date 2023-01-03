@@ -15,6 +15,7 @@ import Payment from "../Payment/Payment"
 import AdminLogin from "../admin/adminlogin"
 import Dashboard from "../admin/adminDashboard"
 import NewProduct from "../admin/adminProduct"
+import Orders from "../admin/adminOrder"
 
 
 
@@ -36,6 +37,7 @@ export default function AllRoutes() {
         <Route path="/admin" element={<AdminLogin/>}/>
         <Route path="/admin/dashboard" element={<Dashboard/>}/>
         <Route path="/admin/product" element={<NewProduct/>}/>
+        <Route path="/admin/orders" element={<Orders/>}/>
         <Route path="/" element={<Home/>}/>
 
     </Routes>

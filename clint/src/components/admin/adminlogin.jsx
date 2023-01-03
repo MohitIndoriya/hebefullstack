@@ -19,6 +19,7 @@ export default function AdminLogin() {
   const handleSubmit = () => {
 
     dispatch(Adminlogin({ email, password }))
+    navigate("/admin/dashboard")
   }
   // isAuth && alert("Login Succesfull")
   isAuth && navigate("/admin/dashboard")
