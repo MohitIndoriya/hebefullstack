@@ -59,6 +59,21 @@ app.get('/loggedIn/:token',async(req,res)=>{
         })
     }
 })
+app.post("/admin/login",(req,res)=>{
+let {email,password}=req.body
+try {
+    if(email==process.env.Admin_email && password==process.env.Admin_password){
+        let token=jwt.sign({"role":"admin"},process.env.Admin_secret)
+  return   res.status(200).send(token)
+} else{
+return res.status(400).send("wrong credential")
+}
+}catch (error) {
+   return  res.status(400).send("wrong credentials") 
+}
+
+
+})
 
 
 

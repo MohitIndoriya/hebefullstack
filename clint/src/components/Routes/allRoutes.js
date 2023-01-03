@@ -12,6 +12,10 @@ import Product from "../Product Page/Product"
 // import Checkout from "../checkout/checkout"
 import Address from "../Address/Address"
 import Payment from "../Payment/Payment"
+import AdminLogin from "../admin/adminlogin"
+import Dashboard from "../admin/adminDashboard"
+import NewProduct from "../admin/adminProduct"
+import Orders from "../admin/adminOrder"
 
 
 
@@ -30,7 +34,10 @@ export default function AllRoutes() {
         <Route path="product/:id" element={<Product/>}/>
         <Route path="/address" element={<Address/>}/>
         <Route path="/payment" element={<Payment/>}/>
-        
+        <Route path="/admin" element={<AdminLogin/>}/>
+        <Route path="/admin/dashboard" element={<Dashboard/>}/>
+        <Route path="/admin/product" element={<NewProduct/>}/>
+        <Route path="/admin/orders" element={<Orders/>}/>
         <Route path="/" element={<Home/>}/>
 
     </Routes>

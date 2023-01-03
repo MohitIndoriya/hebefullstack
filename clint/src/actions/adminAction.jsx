@@ -2,13 +2,13 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
-export const Signin=(creds)=>async (dispatch)=>{
+export const Adminlogin=(creds)=>async (dispatch)=>{
    // console.log("chalgyooooo")
-    dispatch({type:"LODING"})
+    dispatch({type:"ADMINLODING"})
     try{
-        let res=await axios.post(`http://localhost:8080/users/login`,creds)
+        let res=await axios.post(`http://localhost:8080/users/admin/login`,creds)
         //console.log(res,"ohu")
-        localStorage.setItem("token",res.data)
+        localStorage.setItem("Admintoken",res.data)
         if(res.data.length>0){
             toast.success('SucessFully Login', {
                 position: "top-right",
@@ -20,7 +20,7 @@ export const Signin=(creds)=>async (dispatch)=>{
                 progress: undefined,
                 theme: "light",
               });
-            return dispatch({type:"LOGIN",paylode:res.data[0].firstName})
+            return dispatch({type:"ADMINLOGIN",paylode:res.data})
 
           
         }else{
@@ -40,8 +40,4 @@ export const Signin=(creds)=>async (dispatch)=>{
           });
         // console.log(e)
     }
-}
-
-export const Logout =()=>(dispatch)=>{
-   return  dispatch({type:"LOGOUT"})
 }
