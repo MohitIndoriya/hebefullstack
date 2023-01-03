@@ -18,7 +18,7 @@ const data = [
     "desciption": "The Runa Skirt is a mid-length linen skirt that sits on a fixed waistband, secured by an invisible zip closure at the side. The top of the skirt features a wide panel of small tucks that create a subtle fullness and volume through the body of the skirt.",
     "category": "skirts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/skirts/products/runa-skirt-black"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_b81a34d6-3b6a-440c-820c-276467cbb6c4_750x.jpg?v=1661738372"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@ const data = [
     "desciption": "Cut from premium cotton denim, our Denim Mini Skirt is an essential in every spring and summer wardrobe. This high-waisted skirt features a classic fit that sits close to the hips but still offers room to move. Style your denim skirt with a cotton rib tank, an asymmetric top, or wear it to the beach with swimwear.",
     "category": "skirts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/skirts/products/denim-mini-skirt-jet-black"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_086d607c-89e7-4039-911b-8d4c796beeec_750x.webp.jpg?v=1668633161"
   },
   {
     "id": 4,
@@ -36,7 +36,7 @@ const data = [
     "desciption": "Our best selling Blazing Tiered Maxi Skirt now comes in a gorgeous grey and white gingham print. Wear with your favourite plain tank or crop and some mules. Featuring a flat waist and perfectly balanced tiers for a super flattering fit!",
     "category": "skirts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/skirts/products/blazing-skirt-grey-gingham-coming-soon"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_d880805b-bc35-487f-a424-84ffa58fb728_1800x1800.jpg?v=1670997005"
   },
   {
     "id": 5,
@@ -45,7 +45,7 @@ const data = [
     "desciption": "The Charming skirt is a must-have staple in your wardrobe! Make a statement in this stunning emerald-coloured maxi, perfect for every occasion.",
     "category": "skirts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/skirts/products/charming-skirt"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/0D642E22-2296-4F84-B65E-C205ACABEE69_1800x1800.webp.jpg?v=1670884516"
   },
   {
     "id": 6,
@@ -54,7 +54,7 @@ const data = [
     "desciption": "The Charming skirt is a must-have staple in your wardrobe! Make a statement in this stunning emerald-coloured maxi, perfect for every occasion.",
     "category": "skirts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/skirts/products/utility-skirt-ecru"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/C2FDC69A-F507-4146-BC7F-DE1D87057E11_1800x1800.jpg?v=1669692444"
   },
   {
     "id": 7,
@@ -63,7 +63,7 @@ const data = [
     "desciption": "THE PERFECT FITTED DENIM MINI SKIRT. HIGH WAISTED AND FITTED TO YOUR WAIST AND HIPS. CLASSIC 5 POCKET DETAILS WITH A RAW HEM. THIS BEAUTY ALSO COMES WITH A METAL CHAIN THAT RUNS THROUGH THE BELT LOOPS AND FASTENS AROUND YOUR WAIST.",
     "category": "skirts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/skirts/products/salty-dog-jain"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/C4221CAA-57F4-41A3-AAE0-0867680273F4_1800x1800.jpg?v=1630647452"
   },
   {
     "id": 8,
@@ -72,7 +72,7 @@ const data = [
     "desciption": "The Still the One Skirt is about to be your summer wardrobe MVP. Three ways to wear this skirt",
     "category": "skirts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/skirts/products/still-the-one-skirt-black-coming-soon"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/0C6A73D8-A846-4B8C-BBEF-E6E4770750E2_1800x1800.jpg?v=1665456071"
   },
   {
     "id": 9,
@@ -81,7 +81,7 @@ const data = [
     "desciption": "HIGH WAISTED AND FITTED TO YOUR WAIST AND HIPS. CLASSIC 5 POCKET DETAILS WITH A RAW HEM. THIS BEAUTY ALSO COMES WITH A METAL CHAIN THAT RUNS THROUGH THE BELT LOOPS AND FASTENS AROUND YOUR WAIST.",
     "category": "skirts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/skirts/products/aubrey-knit-skirt-black"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/2276065F-3BAC-4242-92B6-D71E16A473F1_1800x1800.jpg?v=1664925895"
   },
   {
     "id": 10,
@@ -90,7 +90,7 @@ const data = [
     "desciption": "Delicate little huggies, made up of mini pearls. Super sweet on their own, even better layered with other earrings.",
     "category": "jewellery",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/mini-pearl-huggies"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/2276065F-3BAC-4242-92B6-D71E16A473F1_1800x1800.jpg?v=1664925895"
   },
    {
     "id": 12,
@@ -99,7 +99,7 @@ const data = [
     "desciption": "Delicate square huggies. Classic & perfect for stacking.",
     "category": "jewellery",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/so-square-huggies-silver-coming-soon"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/C3DF14B9-A33E-4724-A742-BB7B50714F06_1800x1800.webp.jpg?v=1663819450"
   },
    {
     "id": 13,
@@ -108,7 +108,7 @@ const data = [
     "desciption": "Delicate little huggies, made up of mini pearls. Super sweet on their own, even better layered with other earrings.",
     "category": "jewellery",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/copy-of-mini-pearl-huggies-silver"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/B98EE439-DB2F-4A60-8C89-5E49E8554F61_1800x1800.webp.jpg?v=1664420702"
   },
    {
     "id": 14,
@@ -117,7 +117,7 @@ const data = [
     "desciption": "jewellery",
     "category": "Textured brass with 24k gold plating and crystal stud detail.",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/hieroglyph-pendant-gold"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/B98EE439-DB2F-4A60-8C89-5E49E8554F61_1800x1800.webp.jpg?v=1664420702"
   },
    {
     "id": 15,
@@ -126,7 +126,7 @@ const data = [
     "desciption": "A collaboration between local label Odi Jewellery and Hebe Boutique. Nodding towards 90’s bling, shop our small edit of current styles that will add an element of playful edge to your outfit. Pair back with a casual sweat, blazer and denim for a feminine luxe accent or be totally extra and go all out! ",
     "category": "jewellery",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/milkyway-earring"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/B98EE439-DB2F-4A60-8C89-5E49E8554F61_1800x1800.webp.jpg?v=1664420702"
   },
    {
     "id": 16,
@@ -135,7 +135,7 @@ const data = [
     "desciption": "Crumpled irregular texture is what make these hoops super special.",
     "category": "jewellery",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/vesta-hoops "
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_7e059031-08e9-457b-a9ab-c610cae29067_1800x1800.jpg?v=1601254705 "
   },
    {
     "id": 17,
@@ -144,7 +144,7 @@ const data = [
     "desciption": "A slightly bolder huggie with a smooth drop shape. Timeless & perfect for everyday wear.",
     "category": "jewellery",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/mini-pearl-huggies-coming-soon"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_7e059031-08e9-457b-a9ab-c610cae29067_1800x1800.jpg?v=1601254705"
   },
    {
     "id": 18,
@@ -153,7 +153,7 @@ const data = [
     "desciption": "A collaboration between local label Odi Jewellery and Hebe Boutique. Nodding towards 90’s bling, shop our small edit of current styles that will add an element of playful edge to your outfit. Pair back with a casual sweat, blazer and denim for a feminine luxe accent or be totally extra and go all out! ",
     "category": "jewellery",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/capella-earring"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_700c2714-57de-4c6e-9a37-5ad334933f0f_1800x1800.jpg?v=1571709539"
   },
    {
     "id": 19,
@@ -162,7 +162,7 @@ const data = [
     "desciption": "Guitar Pic Anchor Sleeper crafted in high polished sterling silver ",
     "category": "jewellery",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/guitar-pic-anchor-sleeper"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/82B02C47-F6BB-4AA7-AC69-4610E2B0F492_1800x1800.jpg?v=1671143489"
   },
    {
     "id": 20,
@@ -171,7 +171,7 @@ const data = [
     "desciption": "Textural snake skin pattern with STOLEN branded plate.",
     "category": "jewellery",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/snake-band-skinny"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/B78CA27C-1144-49BA-8554-4592FD2ECB81_1800x1800.jpeg.jpg?v=1571709542"
   },
    {
     "id": 21,
@@ -180,7 +180,7 @@ const data = [
     "desciption": "A pair of simple rectangular studs with chain.",
     "category": "jewellery",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/you-rock-chain-studs"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_5cff1415-df90-4f9c-80ba-5dd0a869caa6_1800x1800.jpg?v=1571709523"
   },
   {
     "id": 22,
@@ -189,7 +189,7 @@ const data = [
     "desciption": "A delicate freshwater pearl necklace. Super layered or simply sweet on it's own. Secured with a clasp & adjustable length. ",
     "category": "jewellery",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/jewellery/products/pretty-in-pearls-necklace"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_ce084f8c-311c-4e8c-bfac-69ae8dbf0c36_1800x1800.webp.jpg?v=1671072690"
   },
   {
     "id": 23,
@@ -252,7 +252,7 @@ const data = [
     "desciption": "Milla's thin frame reflects the bad vibes and inspires your next move.",
     "category": "sunglasses",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/sunglasses/products/milla-silver"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/CF43EFD5-51F9-47F0-B938-F30B5FFA82F0_1800x1800.jpg?v=1667252556"
   },
   {
     "id": 30,
@@ -261,7 +261,7 @@ const data = [
     "desciption": "Last Resort is the blurred resurrection of a dream where Jim Morrison sings and the Thunderbirds hover and rock n roll is king. Originally launched with our first eyewear collection back in 2013, we have now modified this frame with sharper edges and a much more sustainable manufacturing process.",
     "category": "sunglasses",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/sunglasses/products/last-resort-frame-black"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/CF43EFD5-51F9-47F0-B938-F30B5FFA82F0_1800x1800.jpg?v=1667252556"
   },
   {
     "id": 31,
@@ -270,7 +270,7 @@ const data = [
     "desciption": "Feel empowered by the captivating figure of our Parker. Bolder than ever, and here to make an almighty statement.",
     "category": "sunglasses",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/sunglasses/products/parker-pink-coming-soon"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_1800x1800.jpg?v=1667874439"
   },
   {
     "id": 32,
@@ -279,7 +279,7 @@ const data = [
     "desciption": "The Duke Hoodie is a staple sweatshirt, perfect for elevated winter layering. In cosy and comfortable 100% cotton, the Duke features the latest in logo branding from Camilla & Marc.",
     "category": "sweatshirt",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/sweatshirts-hoodies/products/duke-hoodie-black-pre-order"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_18582cc6-c8ef-4cb1-98b0-6d631ea0868a_1800x1800.jpg?v=1660278654"
   },
   {
     "id": 33,
@@ -288,7 +288,7 @@ const data = [
     "desciption": "C&M CAMILLA AND MARC Sutton Crew Neck Sweater in Black.",
     "category": "sweatshirt",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/sweatshirts-hoodies/products/sutton-sweater-black-pre-order"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_18582cc6-c8ef-4cb1-98b0-6d631ea0868a_1800x1800.jpg?v=1660278654"
   },
   {
     "id": 34,
@@ -297,7 +297,7 @@ const data = [
     "desciption": "From perfect palm trees to the Wild West, the Hollywood hustle to the idyllic Palm Springs. Our latest collection 'American Dream' celebrates vintage Americana aesthetics from the 50s and 60s with a remixed Y2K mood. This is Americana meets rock n roll.",
     "category": "sweatshirt",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/sweatshirts-hoodies/products/script-logo-hood-baby-pink"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_18582cc6-c8ef-4cb1-98b0-6d631ea0868a_1800x1800.jpg?v=1660278654"
   },
   {
     "id": 35,
@@ -306,7 +306,7 @@ const data = [
     "desciption": "A Summer staple so good, you will want it in all colours! ",
     "category": "shorts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/shorts/products/wonder-short-garden-coming-soon"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_18582cc6-c8ef-4cb1-98b0-6d631ea0868a_1800x1800.jpg?v=1660278654"
   },
   {
     "id": 36,
@@ -315,7 +315,7 @@ const data = [
     "desciption": "Boxer Style Shorts made with 100% cotton poplin that’s light, breathable and fit for lounging, sleeping, and even wearing out.",
     "category": "shorts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/shorts/products/leighton-short-sky"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_18582cc6-c8ef-4cb1-98b0-6d631ea0868a_1800x1800.jpg?v=1660278654"
   },
   {
     "id": 37,
@@ -324,7 +324,7 @@ const data = [
     "desciption": "The Wonder Short is a classic paper bag style with an elasticated high cut waist, a removable tie and pockets",
     "category": "shorts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/shorts/products/wonder-short-black-coming-soon"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/image_18582cc6-c8ef-4cb1-98b0-6d631ea0868a_1800x1800.jpg?v=1660278654"
   },
   {
     "id": 38,
@@ -333,7 +333,7 @@ const data = [
     "desciption": "The Ramona Short is built upon our adored Willow Pant. They are crafted in 100% Silk and feature the same relaxed tailored fit, sitting on a fixed waistband and secured with a zip and shell button closure. These shorts feature two pleats on either side of the zip as well as pockets and belt loops",
     "category": "shorts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/shorts/products/ramona-short-clover"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/25C777EE-F462-4AA3-B828-6A5EFC536858_1800x1800.jpg?v=1666300379"
   },
   {
     "id": 39,
@@ -342,7 +342,7 @@ const data = [
     "desciption": "C&M CAMILLA AND MARC Valencia Cotton Logo Short in White.",
     "category": "shorts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/shorts/products/valencia-short-white"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/25C777EE-F462-4AA3-B828-6A5EFC536858_1800x1800.jpg?v=1666300379"
   },
   {
     "id": 40,
@@ -351,7 +351,7 @@ const data = [
     "desciption": "The Newport Shorts are back! Our favorite frilly skort, this time in a sunny marigold broderie. Featuring a side zip and a beautiful scalloped broderie edge.",
     "category": "shorts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/shorts/products/newport-short-marigold-broderie"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/25C777EE-F462-4AA3-B828-6A5EFC536858_1800x1800.jpg?v=1666300379"
   },
    {
     "id": 41,
@@ -360,7 +360,7 @@ const data = [
     "desciption": "A mid-rise denim short that finishes above the knee, featuring elastic at the waistband for a comfortable fit. The shorts have front pleats, both side seam and back patch pockets, and are fastened with nickel-free tacks in a concealed front fly.",
     "category": "shorts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/shorts/products/outline-shorts-black-denim-coming-soon"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/8C6A2073-92E2-4B30-88E4-5ABA077A6DFB_1800x1800.webp.jpg?v=1668202046"
   },
    {
     "id": 42,
@@ -369,7 +369,7 @@ const data = [
     "desciption": "A mid-rise denim short that finishes above the knee, featuring elastic at the waistband for a comfortable fit.",
     "category": "shorts",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/shorts/products/casey-short-pink-coming-soon"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/F626B428-FA29-443D-8AD0-F1D389A00E4C_1800x1800.jpg?v=1665044001"
   },
    {
     "id": 43,
@@ -378,7 +378,7 @@ const data = [
     "desciption": "Feel luxurious in the super soft drapey wide leg satin pants by Among the Brave. These pants will effortlessly take you from desk to dinner, We love these paired with a button up shirt and heels or a simple cami and sneakers for a more casual look. ",
     "category": "pants",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/pants/products/super-luxe-elastic-wide-leg-black-satin"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/F626B428-FA29-443D-8AD0-F1D389A00E4C_1800x1800.jpg?v=1665044001"
   },
    {
     "id": 44,
@@ -387,7 +387,7 @@ const data = [
     "desciption": "Classic linen pants with a scalloped spin. We love our new sweet heart pants paired with thematching sweetheart shirt. Dress them up with a heel or wear them everyday with your favoritesummer sandal.",
     "category": "pants",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/pants/products/sweetheart-pants-black"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/F626B428-FA29-443D-8AD0-F1D389A00E4C_1800x1800.jpg?v=1665044001"
   },
    {
     "id": 45,
@@ -396,7 +396,7 @@ const data = [
     "desciption": "60% linen 35% viscose 5% elastane",
     "category": "pants",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/pants/products/home-pant-natural"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/98016A6A-D5F2-40B0-B67A-DA840684968C_1800x1800.webp.jpg?v=1668553677"
   },
    {
     "id": 46,
@@ -405,7 +405,7 @@ const data = [
     "desciption": "C&M CAMILLA AND MARC Luna Knit Wide Leg Pant in Black.",
     "category": "pants",
     "quantity": 1,
-    "image": "https://hebeboutique.com/collections/pants/products/luna-knit-pant-black"
+    "image": "https://cdn.shopify.com/s/files/1/1132/3440/products/98016A6A-D5F2-40B0-B67A-DA840684968C_1800x1800.webp.jpg?v=1668553677"
   }
 
 ]
