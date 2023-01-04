@@ -28,7 +28,7 @@ export default function Orders(){
     let [data,setdata]=useState([])
     useEffect(()=>{
     let db=async()=>{
-let d=await axios.get("http://localhost:8080/order")
+let d=await axios.get(`${process.env.REACT_APP_BACKEND_URL}order`)
 
 return setdata((data)=>data=d.data.data);
 

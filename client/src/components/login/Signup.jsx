@@ -34,7 +34,7 @@ export default function Signup() {
 
 
 
-      await axios.post("http://localhost:8080/users/signup", user)
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}users/signup`, user)
       dispatch({
         type: "REGISTER",
         payload: "user registerd"

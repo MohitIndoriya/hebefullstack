@@ -6,7 +6,7 @@ export const Adminlogin=(creds)=>async (dispatch)=>{
    // console.log("chalgyooooo")
     dispatch({type:"ADMINLODING"})
     try{
-        let res=await axios.post(`http://localhost:8080/users/admin/login`,creds)
+        let res=await axios.post(`${process.env.REACT_APP_BACKEND_URL}users/admin/login`,creds)
         //console.log(res,"ohu")
         localStorage.setItem("Admintoken",res.data)
         if(res.data.length>0){

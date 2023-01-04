@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 export  const getcart=()=>async (dispatch)=>{
    try{
     let token=localStorage.getItem("token");
-    let res=await fetch('http://localhost:8080/cart',{
+    let res=await fetch(`${process.env.REACT_APP_BACKEND_URL}cart`,{
         method:"GET",
         headers:{
             token:token
@@ -34,7 +34,7 @@ export const HandleQuantiy=({id,quantity})=>async (dispatch)=>{
 
     try{
         let token = localStorage.getItem('token');
-        let data=await fetch(`http://localhost:8080/cart/${id}`,{
+        let data=await fetch(`${process.env.REACT_APP_BACKEND_URL}cart/${id}`,{
             method:"PATCH",
             body:JSON.stringify({
                 quantity:quantity
@@ -50,7 +50,7 @@ export const HandleQuantiy=({id,quantity})=>async (dispatch)=>{
     }
     try{
         let token=localStorage.getItem("token");
-        let res=await fetch('http://localhost:8080/cart',{
+        let res=await fetch(`${process.env.REACT_APP_BACKEND_URL}cart`,{
             method:"GET",
             headers:{
                 token:token
@@ -74,7 +74,7 @@ export const HandleQuantiy=({id,quantity})=>async (dispatch)=>{
 export const removedata=(id)=>async(dispatch)=>{
     try {
         let token = localStorage.getItem("token");
-        let cart1=await fetch(`http://localhost:8080/cart/${id}`,{
+        let cart1=await fetch(`${process.env.REACT_APP_BACKEND_URL}cart/${id}`,{
             method:"Delete",
             headers:{
                 token:token
@@ -86,7 +86,7 @@ export const removedata=(id)=>async(dispatch)=>{
     }
     try{
         let token=localStorage.getItem("token");
-        let res=await fetch('http://localhost:8080/cart',{
+        let res=await fetch(`${process.env.REACT_APP_BACKEND_URL}cart`,{
             method:"GET",
             headers:{
                 token:token
@@ -118,7 +118,7 @@ export const addtocart=(e)=>async(dispatch)=>{
         // console.log(item.data,"o hu m")
         let token = localStorage.getItem('token');
         
-        let res=await fetch("http://localhost:8080/cart",{
+        let res=await fetch(`${process.env.REACT_APP_BACKEND_URL}cart`,{
             method:"POST",
             body:JSON.stringify({
                 ...obj
@@ -162,7 +162,7 @@ export const addtocart=(e)=>async(dispatch)=>{
     }
     try{
         let token=localStorage.getItem("token");
-        let res=await fetch('http://localhost:8080/cart',{
+        let res=await fetch(`${process.env.REACT_APP_BACKEND_URL}cart`,{
             method:"GET",
             headers:{
                 token:token

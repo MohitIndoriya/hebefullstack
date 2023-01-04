@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 export const loginUser =async(token,dispatch)=>{
 
     try{
-        let res = await fetch(`http://localhost:8080/users/loggedIn/${token}`);
+        let res = await fetch(`${process.env.REACT_APP_BACKEND_URL}users/loggedIn/${token}`);
         let data = await res.json();
         // console.log(data);
         

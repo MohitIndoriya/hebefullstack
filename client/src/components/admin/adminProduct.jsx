@@ -43,7 +43,7 @@ console.log(products);
 
 
 
-     let data = await axios.post("http://localhost:8080/products",products,{headers:{
+     let data = await axios.post(`${process.env.REACT_APP_BACKEND_URL}products`,products,{headers:{
         token:localStorage.getItem("Admintoken")
      } })
     
