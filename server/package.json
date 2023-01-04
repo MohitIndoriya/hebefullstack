@@ -9,7 +9,6 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.1",
     "nodemon": "^2.0.20",
-    "express-session": "^1.17.3",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0"
   },

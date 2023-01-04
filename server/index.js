@@ -15,7 +15,6 @@ require("./routes/oath.routes");
 const data = process.env;
 
 const app = express();
-app.use(express.static("./build"))
 app.use(expressSession({
     secret:data.SECRET_KEY
 }))
