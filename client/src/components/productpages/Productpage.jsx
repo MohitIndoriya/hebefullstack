@@ -10,6 +10,9 @@ import { addtocart } from "../../actions/cartAction"
 import { Category } from "../../ContextAPI/CategoryProvider"
 import "./ProductPage.css"
 
+
+
+
 export default function Productpage() {
     const {searchcategory} = useContext(Category)
     let [arr,setarr]=useState([])
@@ -24,7 +27,7 @@ export default function Productpage() {
     }
     // console.log(arr)
 useEffect(()=>{
-    data(`http://localhost:8080/products?category=${category}`)
+    data(`${process.env.REACT_APP_BACKEND_URL}products?category=${category}`)
     
 },[category])
 // console.log(arr);

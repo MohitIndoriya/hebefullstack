@@ -25,7 +25,7 @@ export default function Product() {
   const data1=async()=>{
        
        
-    let  products=await axios.get(`http://localhost:8080/products/${id}`)
+    let  products=await axios.get(`${process.env.REACT_APP_BACKEND_URL}products/${id}`)
     
   setproduct([...products.data.data])
     

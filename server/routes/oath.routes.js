@@ -25,7 +25,7 @@ oathRouter.get("/googleLoginSucess", (req, res) => {
   try {
     // console.log(req.user);
     let token = generateToken({ email: req.user.emails[0].value,image:req.user.photos[0].value,firstName:req.user.emails[0].value.split('@')[0]});
-    res.redirect(`http://localhost:3000/?token=${token}`);
+    res.redirect(`${data.WEBSITE_REDIRECT_URL}?token=${token}`);
   } catch (err) {
     res.send("<h1>Page Not Found</h1>");
   }
