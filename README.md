@@ -1,11 +1,11 @@
 # Hebe Boutique Full Stack Clone
-Hello everyone, this blog is all about my 3rd project in Masai School i.e. cloning of Hebe Boutique’s website. In this project, we were a team of 5members including myself, Ankit Rana ,Hardeep Siwach ,Abhishek Patra and Priyanka Chejera . We have completed this project in 5 days.
+Hello everyone,. In this project, we were a team of 5members including Mohit Indoriya , Ankit Rana ,Hardeep Siwach ,Abhishek Patra and Priyanka Chejera . We have completed this project in 5 days.
 
 # Technologies used:
 In making this project, we used Html, Css, advanced JavaScript, React, Redux, Context API, Chakra UI ,mongodb,Express ,Node.js.
 
 # Tasks Done:
-We have assigned our tasks equally in the team. For example, landing page was created by Priyanka Chejera. Login of User and Admin page was created by Mohit Kumar Indoriya.Google Oauth is done by Abhishek patra , Cart  and Checkout was created by AnKit Rana  and Product and Product Details  was created by Hardeep Siwach.
+We have assigned our tasks equally in the team. For example, landing page was created by Priyanka Chejera. Login of User and Admin Section  was created by Mohit Kumar Indoriya.Google Oauth is done by Abhishek patra , Cart  and Checkout was created by AnKit Rana  and Product and Product Details  was created by Hardeep Siwach.
 
 # Features:
 # Landing page:
