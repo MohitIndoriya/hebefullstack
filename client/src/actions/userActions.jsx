@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 
 export const Signin=(creds)=>async (dispatch)=>{
-   // console.log("chalgyooooo")
+   console.log("chalgyooooo")
     dispatch({type:"LODING"})
     try{
         let res=await axios.post(`${process.env.REACT_APP_BACKEND_URL}users/login`,creds)
-        //console.log(res,"ohu")
-        localStorage.setItem("token",res.data)
+        console.log(res,"ohu")
+        localStorage.setItem("token",res.data.data)
         if(res.data.length>0){
             toast.success('SucessFully Login', {
                 position: "top-right",
@@ -20,7 +20,7 @@ export const Signin=(creds)=>async (dispatch)=>{
                 progress: undefined,
                 theme: "light",
               });
-            return dispatch({type:"LOGIN",paylode:res.data[0].firstName})
+            return dispatch({type:"LOGIN",paylode:res.data.data[0].firstName})
 
           
         }else{

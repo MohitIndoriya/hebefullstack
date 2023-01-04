@@ -17,8 +17,9 @@ export default function Login() {
 
   const dispatch = useDispatch()
   const handleSubmit = () => {
-
+    // console.log("Hello");
     dispatch(Signin({ email, password }))
+    navigate('/')
   }
   // isAuth && alert("Login Succesfull")
   isAuth && navigate("/")
