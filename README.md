@@ -54,7 +54,7 @@ In the Cart page, we have the list of the items that we added to the cart and ca
 <br/>
 
 
-In payment page, there are three options available for user. User can either choose cash on delivery, credit card or debit card option for payment and after filling all the correct details his payment will be done and he will be redirected to Landing page.
+In payment page, there  user get   credit card or debit card option for payment and after filling all the correct details his payment will be done and he will be redirected to Landing page.
 <br/>
 There is one admin section also that is only accesable by admin .for admin panel admin have to give a route admin and after that he have to give admin's credentials 
 after that admin can  add new products and see all order placed at website .
