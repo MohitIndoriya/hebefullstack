@@ -1,4 +1,4 @@
-# Hebe Boutique Full Stack Clone
+# Hebe Boutique Full Stack 
 Hello everyone,. In this project, we were a team of 5members including Mohit Indoriya , Ankit Rana ,Hardeep Siwach ,Abhishek Patra and Priyanka Chejera . We have completed this project in 5 days.
 
 # Technologies used:
