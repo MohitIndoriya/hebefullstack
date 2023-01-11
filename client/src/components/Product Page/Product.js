@@ -48,16 +48,17 @@ export default function Product() {
               alt="pic"
               height="750"
               width="540"
-              margin="auto"
+              
+              style={{display:'block',margin:'auto'}}
             />
           }
         </div>
         <div id="topRight">
-          <div>{productArray[0].category?(productArray[0].category).toUpperCase():""}</div>
-          <h1>{productArray[0].title?productArray[0].title.replace('//','-'):""}</h1>
+          <div className="responsiveCenter">{productArray[0].category?(productArray[0].category).toUpperCase():""}</div>
+          <h1 className="responsiveCenter">{productArray[0].title?productArray[0].title.replace('//','-'):""}</h1>
           <div>
             <div style={{fontSize:"1.6rem"}}>$ {productArray[0].price + "  "}</div>
-            <div style={{ fontSize: "1.4rem", display: "flex" }}>
+            <div  className="responsiveRemove" style={{ fontSize: "1.4rem", display: "flex" }}>
               <span>
                 Or 6 Weekly Interest-Free Payments From $13.32 With Laybuy
               </span>
@@ -67,7 +68,7 @@ export default function Product() {
               />
             </div>
           </div>
-          <div style={{ fontSize: "1.4rem", display: "flex" }}>
+          <div className="responsiveRemove" style={{ fontSize: "1.4rem", display: "flex" }}>
             Or ${} Interest-Free Payment 
             { }` With
             <img
@@ -78,17 +79,17 @@ export default function Product() {
           </div>
           <div style={{ fontSize: "17px" }}>Tax Included</div>
           <div style={{ fontSize: "18px" }}>{} in Stock</div>
-          <div>
+          <div className="responsiveCenter">
             <p>Size</p>
             <Tabs variant="solid-rounded" colorScheme="green">
-              <TabList>
+              <TabList justifyContent='center'>
                 <Tab>S</Tab>
                 <Tab>M</Tab>
                 <Tab>L</Tab>
               </TabList>
             </Tabs>
           </div>
-          <button ref={btnRef} onClick={()=>{
+          <button className="addToCartButton" ref={btnRef} onClick={()=>{
             if(!localStorage.getItem("token")){
               navigate('/login');
             }
@@ -127,11 +128,11 @@ export default function Product() {
           </div>
           <div
             style={{
-              width: "500px",
+              width: "100%",
             }}
           >
             <Tabs>
-              <TabList>
+              <TabList justifyContent='space-between'>
                 <Tab>Description</Tab>
                 <Tab>Shipping</Tab>
                 <Tab>Returns</Tab>

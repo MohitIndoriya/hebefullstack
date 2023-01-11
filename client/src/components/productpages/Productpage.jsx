@@ -42,15 +42,15 @@ const sortAsc = (e) => {
    
   return (
     <div className="productPageContainer">
-    <select  onChange={sortAsc} className="sortSelect">
+    {arr.length>0?<select  onChange={sortAsc} className="sortSelect">
       <option value="" >Sort By Price</option>
       <option value="asc">Low To High</option>
       <option value="desc">High To Low</option>
-    </select>
-    <Box display="grid" className="productsDisplay" gridTemplateColumns="repeat(3,1fr)"  gap="15px" m="auto !important" width="100%">{
+    </select>:""}
+    {arr.length>0?<Box display="grid" className="productsDisplay" gridTemplateColumns="repeat(3,1fr)"  gap="15px" m="auto !important" width="100%">{
       
       arr.map((e)=>{
-        return <Card height="100%" key={e["_id"]}  margin={"auto"}   width="100%">
+        return <Card height="100%" key={e["_id"]} className='productCard'  margin={"auto"}   width="100%">
             <CardBody>
              <Link to ={`/product/${e["_id"]}`}> <Image
                 src={e.image}
@@ -68,10 +68,7 @@ const sortAsc = (e) => {
               </Stack>
             </CardBody>
             <Divider />
-            <CardFooter justifyContent="center">
-              <ButtonGroup spacing='2'>
-               
-                <Button variant='ghost' colorScheme='blue' onClick={()=>{
+            <CardFooter className="addToCartContainer"  justifyContent="center" onClick={()=>{
                   if(!localStorage.getItem("token")){
                     navigate('/login');
                     toast.warn('Login First', {
@@ -90,13 +87,19 @@ const sortAsc = (e) => {
                     dispatch(addtocart(e))
                   }
                 }}>
-                  Add to cart
-                </Button>
-              </ButtonGroup>
+
+              <Box fontWeight='bold' fontSize='1.1rem' spacing='2'>
+
+                  Add To Cart
+                
+              </Box>
             </CardFooter>
           </Card>
         })
-        }</Box>
+        }</Box>:<Box className="nothingHereImage">
+        <img src='https://cdn.dribbble.com/users/745861/screenshots/7889509/media/5891d9d48179ca0b3a8fcdf178db8737.png?compress=1' width='100%'  style={{display:'block',margin:'auto'}}/>
+        <Text position='absolute' left='30%' bottom='5%' textAlign='center' fontSize='2rem' backgroundColor='#e66264' color='white' width='40%' margin='auto' borderRadius='5px'>There is nothing to See</Text>
+      </Box>}
         </div>
   )
      

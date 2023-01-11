@@ -32,9 +32,9 @@ export default function AdminLogin() {
 
 
   return (
-    <Box bg="#caafa8">
+    <Box bg="#e66264">
       <Container>
-        <Box bg="#caafa8" w='100%' color='white' width="100%" height="800px" paddingTop="100px"  >
+        <Box bg="#e66264" w='100%' color='white' width="100%" height="800px" paddingTop="100px"  >
           <Heading as="h1" size="2xl" fontFamily="chloeregular">Login</Heading>
           <Heading as='h6' size='md' textAlign="left" fontWeight="normal" paddingTop="30px" >Email</Heading>
           <Input variant='flushed' value={email} onChange={(e) => setEmail(e.target.value)} />

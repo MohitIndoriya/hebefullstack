@@ -32,9 +32,9 @@ export default function Login() {
 
 
   return (
-    <Box bg="#caafa8">
+    <Box bg="#e66264">
       <Container>
-        <Box bg="#caafa8" w='100%' color='white' width="100%" height="800px" paddingTop="100px"  >
+        <Box bg="#e66264" w='100%' color='white' width="100%" height="800px" paddingTop="100px"  >
           <Heading as="h1" size="2xl" fontFamily="chloeregular">Login</Heading>
           <Heading as='h6' size='md' textAlign="left" fontWeight="normal" paddingTop="30px" >Email</Heading>
           <Input variant='flushed' value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -44,13 +44,15 @@ export default function Login() {
             Log in
           </Button>
           <a href={`${process.env.REACT_APP_BACKEND_URL}google`}><Button colorScheme='black' textColor="#caafa8" display={"flex"} gap="10px" variant='ghost' width="100%" bg="white" marginTop="10px" borderRadius="0px" >
-            <Image src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png" width="30px" height="30px" />
+            <Image src="https://img.icons8.com/color/512/google-logo.png" width="30px" height="30px" />
             <span>Login With Google</span>
 
           </Button></a>
+          <Box display='flex'  justifyContent='space-between'>
 
-          <Link to="/createAccount" ><Heading as='h6' size='md' textAlign="left" fontWeight="normal" paddingTop="50px" >Create account</Heading></Link>
-          <Link to="/admin" ><Heading as='h6' size='md' textAlign="left" fontWeight="normal" paddingTop="50px" >Login as Admin</Heading></Link>
+          <Link className='linkLogin' to="/createAccount" ><Heading as='h6' size='md' textAlign="center" textDecoration='none' fontWeight="normal"  >Create account</Heading></Link>
+          <Link className='linkLogin'to="/admin" ><Heading as='h6' size='md' textAlign="center" textDecoration='none' fontWeight="normal"  >Login as Admin</Heading></Link>
+          </Box>
         </Box>
       </Container>
     </Box>

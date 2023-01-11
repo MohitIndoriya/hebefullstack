@@ -5,14 +5,15 @@
 }
 
 .container{
-    background-color: #caafa8;
+    background-color: #e66264;
     color: #ffffff;
     padding: 5px;
     margin: 0px auto;
     padding-top: 10%;
 }
 #top{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     padding: 4px;
     justify-content: center;
     gap: 50px;
@@ -63,7 +64,8 @@
     padding: 10px;
     margin-top: 30px;
     margin-bottom: 10px;
-    transition: background 0.2s ease-in-out;
+    /* transition: background 0.2s ease-in-out; */
+    
   }
 #buyBtn{
     border-radius: 4px;
@@ -85,6 +87,9 @@
     background-color: #5a31f4;
     transition: background 0.1s ease-in-out;
 }
+.addToCartButton{
+    background-color: #e66264 !important;
+}
 #topRight > div:nth-child(11)  p{
     margin-top: 30px;
     font-size: 1.2rem;
@@ -102,4 +107,27 @@
 a:hover{
     cursor: pointer;
     text-decoration: underline;
+}
+
+@media screen and (max-width:1000px) {
+    #top{
+        grid-template-columns: 100%;
+    }
+
+    #topLeft{
+        position: static;
+    }
+
+    #topLeft > img{
+        margin: auto;
+        display: block;
+    }
+
+    .responsiveCenter{
+        text-align: center;
+    }
+
+    .responsiveRemove{
+        display: none !important;
+    }
 }

@@ -75,10 +75,10 @@ export default function Signup() {
     }
   }, [])
   return (
-    <Box bg="#caafa8">
+    <Box bg="#e66264">
 
       <Container>
-        <Box bg="#caafa8" w='100%' color='white' width="100%" height="800px" paddingTop="100px"  >
+        <Box bg="#e66264" w='100%' color='white' width="100%" height="800px" paddingTop="100px"  >
           <Heading as="h1" size="2xl" fontFamily="chloeregular">Create Account</Heading>
           <Heading as='h6' size='md' textAlign="left" fontWeight="normal" paddingTop="60px" >First Name</Heading>
           <Input variant='flushed' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
