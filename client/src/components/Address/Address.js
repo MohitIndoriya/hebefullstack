@@ -38,7 +38,7 @@ const Address = () => {
 
     const clickHandler=async()=>{
         let token=localStorage.getItem("token");
-        let res=await fetch('http://localhost:8080/cart',{
+        let res=await fetch(`${process.env.REACT_APP_BACKEND_URL}cart`,{
             method:"GET",
             headers:{
                 token:token
@@ -47,7 +47,7 @@ const Address = () => {
         })
         let data = await res.json();
         
-        let res1 = await fetch(`http://localhost:8080/users/loggedIn/${token}`);
+        let res1 = await fetch(`${process.env.REACT_APP_BACKEND_URL}users/loggedIn/${token}`);
         let data1 = await res1.json();
 
         let orderDetails={
@@ -56,7 +56,7 @@ const Address = () => {
             address:form
         }
 
-        let res2 = await fetch(`http://localhost:8080/order`,{
+        let res2 = await fetch(`${process.env.REACT_APP_BACKEND_URL}order`,{
             method:"POST",
             body:JSON.stringify(orderDetails),
             headers:{
@@ -67,7 +67,7 @@ const Address = () => {
 
         let data2 = await res2.json();
         
-        let res3 = await fetch(`http://localhost:8080/cart/delete`,{
+        let res3 = await fetch(`${process.env.REACT_APP_BACKEND_URL}cart/delete`,{
             method:"GET",
             headers:{
                 token:token
