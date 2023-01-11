@@ -16,7 +16,7 @@ p {
 }
 
 .hero-section {
-  background-image: url('https://cdn.shopify.com/s/files/1/1132/3440/files/KATE7833_3024x.jpg');
+  background-image: url('./fashion.png');
   height: 130vh;
   margin: 0px;
   padding: 0px;
@@ -162,7 +162,7 @@ p {
 
 .example-section {
   padding: 80px;
-  background-color: #caafa8;
+  background-color: #e66264;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-bottom: 120px;
@@ -479,7 +479,7 @@ a {
     margin-left: 0px;
   }
 
-  .hero-section{
+  .hero-section {
     height: 150vh;
   }
 

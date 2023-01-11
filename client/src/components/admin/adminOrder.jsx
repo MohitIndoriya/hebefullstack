@@ -39,7 +39,7 @@ return setdata((data)=>data=d.data.data);
   
     return (
 <TableContainer>
-  <Table variant='simple'>
+  <Table variant='simple' width='90%' margin='auto' mt='5%'>
     <TableCaption>All Order Placed</TableCaption>
     <Thead>
       <Tr>
@@ -48,7 +48,7 @@ return setdata((data)=>data=d.data.data);
         <Th >Orders</Th>
       </Tr>
     </Thead>
-    <Tbody>
+    <Tbody >
      {data.map((e)=>{
         return (
             <Tr>

@@ -78,10 +78,10 @@ console.log(products);
 
 
   return (
-    <Box bg="#caafa8" mb="-30px">
+    <Box bg="#e66264" mb="-30px">
 
       <Container pb="80px"   >
-        <Box bg="#caafa8" w='100%' color='white' width="100%" height="800px" paddingTop="50px"  >
+        <Box bg="#e66264" w='100%' color='white' width="100%" height="800px" paddingTop="50px"  >
           <Heading as="h1" size="2xl" fontFamily="chloeregular">Add Product</Heading>
           <Heading as='h6' size='md' textAlign="left" fontWeight="normal" paddingTop="20px" >Title</Heading>
           <Input variant='flushed' value={title} onChange={(e) => settitle(e.target.value)} />

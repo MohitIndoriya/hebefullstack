@@ -46,7 +46,7 @@ const Navbar1 = () => {
     const navigate = useNavigate();
     return (
       <>
-        <Button ref={btnRef} colorScheme='teal' onClick={() => {
+        <Button ref={btnRef} colorScheme='#e66264' onClick={() => {
 
 
           onOpen();
@@ -159,7 +159,7 @@ const Navbar1 = () => {
             {
               user.firstName != "" ? <div>
                 <Image onClick={() => { setModal(!openModal) }} height="50px" className='profileImage' width="50px" borderRadius="50%" src={user.image ? user.image : "https://thumbs.dreamstime.com/b/anonymous-profile-icon-cartoon-style-vector-web-design-isolated-white-background-220529850.jpg"} />
-                {openModal ? <Box backgroundColor={"#caafa8"} className="dropDown" position={"fixed"} top={"9%"} right={"60px"} borderRadius={"3px"} boxShadow={"0 0 3px white"} >
+                {openModal ? <Box backgroundColor={"#e66264"} className="dropDown" position={"fixed"} top={"9%"} right={"60px"} borderRadius={"3px"} boxShadow={"0 0 3px white"} >
                   <p className='profileDown' style={{ padding: "12px" }}>{user.firstName}</p>
                   <p className='profileDown' style={{ padding: "12px" }} onClick={() => {
                     localStorage.removeItem("token");
@@ -172,11 +172,11 @@ const Navbar1 = () => {
             <Icon onClick={onOpen} as={SearchSharpIcon} />
 
             <Modal size={'full'} height={"100%"} isOpen={isOpen} onClose={onClose}>
-              <ModalContent style={{ backgroundColor: "#CAAFA8", justifyItems: "center" }} height={"100%"} >
+              <ModalContent style={{ backgroundColor: "#e66264", justifyItems: "center" }} height={"100%"} >
                 <ModalHeader height="100%" className="myselfLeft"><Text marginLeft="80px" paddingTop="30px" fontSize="60px" color="white">
                   <TypewriterComponent
                     options={{
-                      
+
                       strings: ["hebe."],
                       loop: true,
                       autoStart: true,

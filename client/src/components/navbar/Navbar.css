@@ -18,7 +18,7 @@
 
 .parent{
 width: 100%;
-background-color: #CAAFA8;
+background-color: #e66264;
 height: 90px;
 display: flex;
 justify-content: space-between;
@@ -138,7 +138,7 @@ z-index: 100;
   float: left;
   width: 33.33%;
   padding: 10px;
-  background-color: #CAAFA8;
+  background-color: #e66264;
   height: 250px;
 }
 
@@ -160,7 +160,7 @@ z-index: 100;
 }
 
 .column a:hover {
-  background-color: #ddd;
+  background-color: #d55c5e;
 }
 
 .profileDown{
@@ -185,7 +185,18 @@ z-index: 100;
   clear: both;
 }
 
-
+.linkLogin{
+  background-color: white;
+  color: #d55c5e;
+  margin-top: 2%;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 45%;
+  text-align: center;
+  text-decoration: none;
+  
+}
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 900px) {

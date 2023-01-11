@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 .footer{
-    background-color: #CAAFA8;
+    background-color: #e66264;
     height: fit-content;
     color: #fff;
     margin: auto;
@@ -106,10 +106,18 @@ input[type=email] {
 .emailBox>input{
     outline: none;
     border: none;
+    color: white;
+    outline-color: white;
 }
+
+
 .emailBox>input:focus{
     outline: none;
     border: none;
+    outline-color: white;
+}
+.emailBox>input::placeholder{
+    color: white;
 }
 .emailIcon{
     display: block;
@@ -119,7 +127,7 @@ input[type=email] {
 
 @media screen and (max-width:900px){
     .footerPara{
-        width: 60%;
+        width: 80%;
     }
     .emailBox{
         width: 50%;

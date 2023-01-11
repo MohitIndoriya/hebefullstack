@@ -33,12 +33,12 @@ function Home(props) {
     <div>
       <App1 />
       <div className="hero-section">
-        <div className="hero-text">
+        {/* <div className="hero-text">
           <h1>Saben Resort</h1>
           <p className="bannerText">
             <span>Let The Good Times Roll</span> <span>Shop Now</span>
           </p>
-        </div>
+        </div> */}
       </div>
       <div className="about-section">
         <p>
