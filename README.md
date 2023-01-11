@@ -10,31 +10,31 @@ We have assigned our tasks equally in the team. For example, landing page was cr
 # Features:
 # Landing page:
 <br/>
-<img src="https://miro.medium.com/max/720/1*ciC58aTLnN9d8a8q8qL07Q.webp"/>
+<img src="./client/src/resources/home1.png"/>
 <br/>
 The above page consists of navbar in which all the important links to our website is given.
 
 <br/>
-<img src="https://miro.medium.com/max/720/1*QUxrUkc7-G9PFeu1xuPy3A.webp"/>
+<img src="./client/src/resources/home2.png"/>
 <br/>
 The above screenshot consists of the slider in which different categories of products links are there .
 
 <br/>
-<img src="https://miro.medium.com/max/720/1*5gyHlgabTIjbYBkE0p2kMA.webp"/>
+<img src="./client/src/resources/home3.png"/>
 <br/>
 
 # Product Category page:
 
 
 <br/>
-<img src="https://miro.medium.com/max/720/1*TwXLZDZvMUFa2LbpoPumAQ.webp"/>
+<img src="./client/src/resources/product.png"/>
 <br/>
 
 In product page, user can buy any of the items by adding it in the cart. User can also see the details of that particular product by clicking on particular product.
 
 # Product Details Page:
 <br/>
-<img src="https://miro.medium.com/max/720/1*ZG1NKhUeJEUuaWTN5QjZuQ.webp"/>
+<img src="./client/src/resources/productdescp.png"/>
 <br/>
 
 
@@ -43,14 +43,15 @@ In these pages , user can view the details of the particular product, and select
 # Cart page:
 
 <br/>
-<img src="https://miro.medium.com/max/720/1*CjeCOJ0DCzx-6z-aywgpRw.webp"/>
+<img src="./client/src/resources/cart.png"/>
 <br/>
 
 In the Cart page, we have the list of the items that we added to the cart and can change the quantity here on , can increase or decrease the quantity, and price changes accordingly.
 
 # Payment page:
 <br/>
-<img src="https://miro.medium.com/max/720/1*p7J_2gtUirpu9QvFYR1P2A.webp"/>
+<img src="./client/src/resources/address.png"/>
+<img src="./client/src/resources/payment.png"/>
 <br/>
 
 
