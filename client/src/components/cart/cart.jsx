@@ -71,9 +71,8 @@ export function Cart() {
           borderColor="#caafa"
           type="unstyled"
           variant="link"
-          bg="#caafa8"
-          paddingBottom="5px"
-        >{<Icon bg="#caafa8" color="white" borderColor="#caafa8" as={ShoppingBagSharpIcon} />}</Button>
+          
+        >{<Icon  color="white" borderColor="#caafa8" as={ShoppingBagSharpIcon} />}</Button>
       ))}
 
       <Drawer onClose={onClose} isOpen={isOpen} size={size}>

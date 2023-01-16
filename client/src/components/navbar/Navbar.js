@@ -193,6 +193,7 @@ const Navbar1 = () => {
                     _placeholder={{ color: 'white' }}
                     fontWeight={"hairline"} />
                   <Link to={`/products/${catg}`}>
+                    
                     <Icon fontSize="50px" color={"white"} paddingBottom="9px" marginBottom="-7px" borderBottom="1px solid white" onClick={handleClick} as={SearchSharpIcon} />
                   </Link>
                 </ModalBody>
