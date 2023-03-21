@@ -28,6 +28,7 @@ passport.use(new googleStrategy({
     callbackURL:data.GOOGLE_CALLBACK,
     passReqToCallback: "true"
 },googleAuth));
+app.get("/",(req,res)=>res.send("welcome to hebe"))
 app.use("/users", userRouter);
 app.use(cartRouter);
 
